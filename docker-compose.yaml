@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+  database:
+    restart: unless-stopped
+    image: postgres:16-bookworm
+    volumes:
+        - ./database:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+        - "POSTGRES_DB=itsupport"
+        - "POSTGRES_USER=itsupport"
+        - "POSTGRES_PASSWORD=gRzXJHxq7qLM"
