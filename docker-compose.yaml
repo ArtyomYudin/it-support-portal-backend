@@ -1,16 +1,44 @@
+#  docker network create it_support --subnet 10.3.0.0/24 -o com.docker.network.bridge.name=it0
+
+networks:
+  default:
+    external: true
+    name: it_support
+
 services:
+  backend:
+    container_name: backend
+    build: .
+    #volumes:
+    #  - .:/app
+    ports:
+      - "8000:8000"
+    #networks:
+    #  - default
   redis:
-    image: "redis:latest"
+    container_name: redis
+    image: docker.io/bitnami/redis:7.4
+    volumes:
+      - "redis_data:/bitnami/redis/data"
+    #networks:
+    #  - default
     ports:
       - "6379:6379"
-  database:
+  postgresql:
+    container_name: postgresql
     restart: unless-stopped
-    image: postgres:16-bookworm
+    image: docker.io/bitnami/postgresql:16
     volumes:
-        - ./database:/var/lib/postgresql/data
+      - "postgresql_data:/bitnami/postgresql"
+    #networks:
+    #  - default
     ports:
       - "5432:5432"
     environment:
         - "POSTGRES_DB=itsupport"
         - "POSTGRES_USER=itsupport"
         - "POSTGRES_PASSWORD=gRzXJHxq7qLM"
+
+volumes:
+  redis_data:
+  postgresql_data:
