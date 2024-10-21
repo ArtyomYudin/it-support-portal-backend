@@ -1,0 +1,14 @@
+{
+  name: "IT Support Backend",
+  dockerComposeFile: "docker-compose.yaml",
+  service: "backend",
+  workspaceFolder: "/workspaces/${localWorkspaceFolderBasename}",
+  forwardPorts: [8000,5432],
+  remoteUser: "root",
+  shutdownAction: "stopCompose",
+  "customizations": {
+    "jetbrains": {
+      "backend" : "PyCharm",
+    }
+  },
+}
