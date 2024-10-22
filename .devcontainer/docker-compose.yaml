@@ -10,7 +10,7 @@ services:
     container_name: backend
     image: "bitnami/python:3.12"
     volumes:
-      - ../..:/workspaces:cached
+      - ../..:/opt/project:cached
     ports:
       - "8000:8000"
   redis:
