@@ -39,5 +39,5 @@ def get_all_events(request):
 
 
 
-#pacs_tcp_client = TcpClient()
-#pacs_tcp_client.connect()
+pacs_tcp_client = TcpClient()
+c = pacs_tcp_client.connect()
