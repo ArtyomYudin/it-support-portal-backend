@@ -1,18 +1,29 @@
-#  docker network create it_support --subnet 10.3.0.0/24 -o com.docker.network.bridge.name=it0
+# docker network create it_support --subnet 10.3.0.0/24 -o com.docker.network.bridge.name=it0
+# docker network create -d macvlan --subnet=172.30.4.128/27 --gateway=172.30.4.129 --ip-range=172.30.4.128/27 -o parent=eth0 eth0
+# sudo ip link add it_macvlan link eth0 type macvlan mode bridge
+# sudo ip addr add 172.30.4.145/27 dev it_macvlan
+# sudo ifconfig it_macvlan up
 
 networks:
   default:
     external: true
     name: it_support
+  eth0:
+    external: true
+    name: eth0
 
 services:
   backend:
     container_name: backend
-    image: "bitnami/python:3.12"
+    build: .
     volumes:
       - ../..:/opt/project:cached
-    ports:
-      - "8000:8000"
+    #ports:
+    #  - "8000:8000"
+    #  - "31415:31415"
+    networks:
+      eth0:
+        ipv4_address: 172.30.4.145
   redis:
     container_name: redis
     image: docker.io/bitnami/redis:7.4

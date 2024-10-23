@@ -1,0 +1,24 @@
+FROM bitnami/python:3.12
+
+LABEL authors="Artyom Yudin"
+
+ENV TZ="Europe/Moscow" \
+    PYTHONUNBUFFERED=1
+
+SHELL ["/bin/bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-c"]
+
+# Install packages
+RUN install_packages openssh-client
+
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# set timezone
+RUN if [ ! -z "${TZ}" ]; then ln -snf "/usr/share/zoneinfo/${TZ}" /etc/localtime && echo "${TZ}" > /etc/timezone; fi
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+EXPOSE 8000
+
+
