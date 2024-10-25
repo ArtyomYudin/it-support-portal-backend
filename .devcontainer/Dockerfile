@@ -8,9 +8,11 @@ ENV TZ="Europe/Moscow" \
 SHELL ["/bin/bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-c"]
 
 # Install packages
-RUN install_packages openssh-client
+#RUN install_packages openssh-client
+#RUN apt-get install openssh-client net-tools -y
 
 RUN apt-get update && apt-get upgrade -y && \
+    apt-get install openssh-client net-tools -y && \
     apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # set timezone

@@ -1,4 +1,5 @@
 import asyncio
+import threading
 
 from django.core.serializers import serialize
 from django.shortcuts import render
@@ -41,3 +42,6 @@ def get_all_events(request):
 
 pacs_tcp_client = TcpClient()
 c = pacs_tcp_client.connect()
+
+#thread = threading.Thread(daemon=True, target=pacs_tcp_client.connect)
+#thread.start()
