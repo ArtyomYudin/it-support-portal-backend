@@ -1,8 +1,4 @@
-import asyncio
-import threading
 
-from django.core.serializers import serialize
-from django.shortcuts import render
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated
@@ -10,8 +6,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from .models import CardOwner, Event
-from rest_framework import generics
-from .serializers import CardOwnerSerializer, EventSerializer
+from .serializers import EventSerializer
 
 from .tcp_client import TcpClient
 

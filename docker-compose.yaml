@@ -10,8 +10,8 @@ services:
     container_name: backend
     image: "bitnami/python:3.12"
     #build: .
-    #volumes:
-    #  - .:/app
+    volumes:
+      - /storage/development/it-support-backend:/opt/project
     ports:
       - "8000:8000"
     #networks:
