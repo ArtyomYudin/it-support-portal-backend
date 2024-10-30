@@ -103,6 +103,6 @@ class TcpClient:
         #    client.close()
         #    print('5')
 
-pacs_tcp_client = TcpClient()
-pacs_tcp_client.connect()
+#pacs_tcp_client = TcpClient()
+#pacs_tcp_client.connect()
 

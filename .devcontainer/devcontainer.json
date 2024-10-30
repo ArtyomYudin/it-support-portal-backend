@@ -2,13 +2,16 @@
   name: "IT Support Backend",
   dockerComposeFile: "docker-compose.yaml",
   service: "backend",
-  workspaceFolder: "/workspaces/${localWorkspaceFolderBasename}",
-  forwardPorts: [8000,5432],
-  remoteUser: "root",
+  workspaceFolder: "/opt/project/${localWorkspaceFolderBasename}",
+  //forwardPorts: [8000,5432],
+  //remoteUser: "root",
   shutdownAction: "stopCompose",
   "customizations": {
     "jetbrains": {
-      "backend" : "PyCharm",
+      "settings": {
+        "com.intellij:app:HttpConfigurable.use_proxy_pac": true
+      },
+      "backend" : "PyCharm"
     }
   },
 }

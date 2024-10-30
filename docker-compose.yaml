@@ -10,8 +10,8 @@ services:
     container_name: backend
     image: "bitnami/python:3.12"
     #build: .
-    #volumes:
-    #  - .:/app
+    volumes:
+      - /storage/development/it-support-backend:/opt/project
     ports:
       - "8000:8000"
     #networks:
@@ -25,6 +25,10 @@ services:
     #  - default
     ports:
       - "6379:6379"
+    env_file:
+      - ./core/.env
+    environment:
+      - "REDIS_PASSWORD=${REDIS_PASSWORD}"
   postgresql:
     container_name: postgresql
     restart: unless-stopped
@@ -35,10 +39,12 @@ services:
     #  - default
     ports:
       - "5432:5432"
+    env_file:
+       - ./core/.env
     environment:
-        - "POSTGRES_DB=itsupport"
-        - "POSTGRES_USER=itsupport"
-        - "POSTGRES_PASSWORD=gRzXJHxq7qLM"
+      - "POSTGRES_DB=${DATABASE_NAME}"
+      - "POSTGRES_USER=${DATABASE_USER}"
+      - "POSTGRES_PASSWORD=${DATABASE_PASSWORD}"
 
 volumes:
   redis_data:
