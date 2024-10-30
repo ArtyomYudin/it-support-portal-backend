@@ -1,3 +1,4 @@
+# IT Support Portal Services
 #  docker network create it_support --subnet 10.3.0.0/24 -o com.docker.network.bridge.name=it0
 
 networks:
@@ -6,45 +7,27 @@ networks:
     name: it_support
 
 services:
-  backend:
-    container_name: backend
-    image: "bitnami/python:3.12"
-    #build: .
-    volumes:
-      - /storage/development/it-support-backend:/opt/project
-    ports:
-      - "8000:8000"
-    #networks:
-    #  - default
   redis:
     container_name: redis
     image: docker.io/bitnami/redis:7.4
     volumes:
       - "redis_data:/bitnami/redis/data"
-    #networks:
-    #  - default
     ports:
       - "6379:6379"
-    env_file:
-      - ./core/.env
     environment:
-      - "REDIS_PASSWORD=${REDIS_PASSWORD}"
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
   postgresql:
     container_name: postgresql
     restart: unless-stopped
     image: docker.io/bitnami/postgresql:16
     volumes:
       - "postgresql_data:/bitnami/postgresql"
-    #networks:
-    #  - default
     ports:
       - "5432:5432"
-    env_file:
-       - ./core/.env
     environment:
-      - "POSTGRES_DB=${DATABASE_NAME}"
-      - "POSTGRES_USER=${DATABASE_USER}"
-      - "POSTGRES_PASSWORD=${DATABASE_PASSWORD}"
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
 
 volumes:
   redis_data:

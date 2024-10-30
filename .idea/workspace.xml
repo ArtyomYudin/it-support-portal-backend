@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a45193bc-fcf0-4353-98b9-dd78caf13964" name="Changes" comment="pacs: tcp socket fix tls">
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="docker compose .env">
+      <change beforePath="$PROJECT_DIR$/.devcontainer/devcontainer.json" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/devcontainer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,70 +19,105 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  <component name="GitLabDefaultAccount">
+    <option name="defaultAccountId" value="2dee5672-918c-45dc-8c87-acdbb9c671bf" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;keeper&quot;,
+      &quot;fullname&quot;: &quot;Artyom Yudin&quot;
+    }
+  }
 }</component>
-  <component name="ProjectId" id="2nmzcUedM09kkYlFfUkRpOZva99" />
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@mona.center-inform.ru:keeper/it-support-backend.git&quot;,
+    &quot;second&quot;: &quot;2dee5672-918c-45dc-8c87-acdbb9c671bf&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2n6Vxi8BLxNWX8uJNUyCLB8nkOB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.backend.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tcp_client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.backend (local).executor": "Run",
+    "Django Server.backend (remote).executor": "Run",
+    "Django Server.backend.executor": "Run",
+    "Docker..devcontainer/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.backend: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Python.manage.executor": "Run",
+    "Python.tcp_client.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Volumes/Macintosh HD Dev/Development/PythonProject/IT-Support-Portal/backend/.devcontainer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
-    <layout>
-      <window_info id="Bookmarks" side_tool="true" />
-      <window_info id="Merge Requests" show_stripe_button="false" />
-      <window_info id="Commit_Guest" show_stripe_button="false" />
-      <window_info id="Pull Requests" />
-      <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
-      <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1517857" />
-      <window_info id="Commit" order="1" weight="0.15145788" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="HfCacheToolWindow" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="0" visible="true" weight="0.23949999" />
-      <window_info anchor="bottom" id="Problems" order="1" />
-      <window_info anchor="bottom" id="Problems View" order="2" weight="0.23949999" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23959121" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.23959121" />
-      <window_info anchor="bottom" id="Python Packages" order="5" weight="0.1" />
-      <window_info anchor="bottom" id="Python Console" order="6" weight="0.32950002" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.23959121" />
-      <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
-      <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
-      <window_info anchor="right" id="SciView" show_stripe_button="false" />
-      <window_info anchor="right" id="Notifications" order="0" weight="0.33035713" />
-      <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.25" />
-      <window_info anchor="right" id="Database" order="2" weight="0.25" />
-      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
-      <window_info anchor="right" id="Plots" order="5" weight="0.1" />
-    </layout>
+}]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="backend" is-module-sdk="true" working-directory="/app">
+        <option name="mappingSettings">
+          <PathMappingSettings>
+            <option name="pathMappings">
+              <list>
+                <mapping local-root=" /storage/development/it-support-backend" remote-root="/app" />
+              </list>
+            </option>
+          </PathMappingSettings>
+        </option>
+        <option name="mappings">
+          <PathMappingSettings>
+            <option name="pathMappings">
+              <list>
+                <mapping local-root=" /storage/development/it-support-backend" remote-root="/app" />
+              </list>
+            </option>
+          </PathMappingSettings>
+        </option>
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="backend" />
+        <option name="myWorkingDirectory" value="/app" />
+      </console-settings>
+    </option>
   </component>
-  <component name="RunManager" selected="Django Server.backend">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.devcontainer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/apps/pacs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yaml: Compose Deployment">
     <configuration name="tcp_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <option name="ENV_FILES" value="" />
@@ -102,14 +141,59 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Django Server.backend (remote)" />
-      <item itemvalue="Django Server.backend" />
-      <item itemvalue="Python.tcp_client" />
-    </list>
+    <configuration name="backend" type="Python.DjangoServer" factoryName="Django server">
+      <module name="backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="core.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (backend)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name=".devcontainer/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Annabelle">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value=".devcontainer/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Annabelle">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Python.tcp_client" />
+        <item itemvalue="Docker..devcontainer/docker-compose.yaml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -124,86 +208,134 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a45193bc-fcf0-4353-98b9-dd78caf13964" name="Changes" comment="" />
-      <created>1729593120637</created>
+      <changelist id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="" />
+      <created>1728293760189</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729593120637</updated>
-      <workItem from="1729593122623" duration="16487000" />
-      <workItem from="1729617253752" duration="70000" />
-      <workItem from="1729617594107" duration="327000" />
-      <workItem from="1729669374592" duration="577000" />
-      <workItem from="1729670313271" duration="4000" />
-      <workItem from="1729670488771" duration="3596000" />
-      <workItem from="1729675798132" duration="1650000" />
-      <workItem from="1729679642567" duration="380000" />
-      <workItem from="1729684518503" duration="1656000" />
-      <workItem from="1729688476626" duration="420000" />
-      <workItem from="1729688960891" duration="678000" />
-      <workItem from="1729689684572" duration="441000" />
-      <workItem from="1729690259410" duration="2848000" />
-      <workItem from="1729708248474" duration="1592000" />
-      <workItem from="1729755512577" duration="126000" />
-      <workItem from="1729755758149" duration="90000" />
-      <workItem from="1729756562712" duration="290000" />
-      <workItem from="1729756965595" duration="105000" />
-      <workItem from="1729757251780" duration="87000" />
-      <workItem from="1729757431624" duration="152000" />
-      <workItem from="1729757683089" duration="385000" />
-      <workItem from="1729758291820" duration="886000" />
-      <workItem from="1729759397149" duration="137000" />
-      <workItem from="1729759608445" duration="2017000" />
-      <workItem from="1729763193052" duration="4675000" />
-      <workItem from="1729769115132" duration="2021000" />
-      <workItem from="1729841484928" duration="247000" />
-      <workItem from="1729841837668" duration="1113000" />
-      <workItem from="1729843014948" duration="99000" />
-      <workItem from="1729843174955" duration="639000" />
-      <workItem from="1729843949109" duration="143000" />
-      <workItem from="1729844165334" duration="939000" />
-      <workItem from="1729845162756" duration="566000" />
-      <workItem from="1729845804494" duration="234000" />
-      <workItem from="1729846186819" duration="484000" />
-      <workItem from="1729846833513" duration="128000" />
-      <workItem from="1729847067656" duration="169000" />
-      <workItem from="1729847290705" duration="370000" />
-      <workItem from="1729847766487" duration="2940000" />
-      <workItem from="1729852582727" duration="92000" />
-      <workItem from="1729852753555" duration="721000" />
-      <workItem from="1729853671960" duration="1310000" />
-      <workItem from="1729855483303" duration="126000" />
-      <workItem from="1729857462274" duration="6764000" />
-      <workItem from="1730279622689" duration="137000" />
-      <workItem from="1730279817959" duration="545000" />
-      <workItem from="1730280369875" duration="201000" />
-      <workItem from="1730280579182" duration="3198000" />
-      <workItem from="1730285023698" duration="417000" />
+      <updated>1728293760189</updated>
+      <workItem from="1728293769690" duration="13785000" />
+      <workItem from="1728461451754" duration="12202000" />
+      <workItem from="1728561211308" duration="17000" />
+      <workItem from="1728561506548" duration="3000" />
+      <workItem from="1728561520559" duration="8000" />
+      <workItem from="1728633203976" duration="11807000" />
+      <workItem from="1728979642669" duration="1371000" />
+      <workItem from="1728981829091" duration="997000" />
+      <workItem from="1728984395392" duration="1436000" />
+      <workItem from="1728985970741" duration="623000" />
+      <workItem from="1728988389439" duration="63000" />
+      <workItem from="1728989299056" duration="4773000" />
+      <workItem from="1728994543751" duration="462000" />
+      <workItem from="1728995263502" duration="171000" />
+      <workItem from="1728995692455" duration="852000" />
+      <workItem from="1728998053531" duration="601000" />
+      <workItem from="1728998817671" duration="3567000" />
+      <workItem from="1729496289047" duration="323000" />
+      <workItem from="1729496648298" duration="437000" />
+      <workItem from="1729497199221" duration="49000" />
+      <workItem from="1729497314642" duration="560000" />
+      <workItem from="1729498085338" duration="2505000" />
+      <workItem from="1729501498150" duration="285000" />
+      <workItem from="1729501825462" duration="1250000" />
+      <workItem from="1729504396559" duration="2923000" />
+      <workItem from="1729509856725" duration="148000" />
+      <workItem from="1729517243261" duration="4883000" />
+      <workItem from="1729580541365" duration="2140000" />
+      <workItem from="1729582961912" duration="2667000" />
+      <workItem from="1729586678365" duration="4531000" />
+      <workItem from="1729667816829" duration="311000" />
+      <workItem from="1729668138081" duration="2225000" />
+      <workItem from="1729686311953" duration="6386000" />
+      <workItem from="1729754469520" duration="57000" />
+      <workItem from="1729754563045" duration="6147000" />
+      <workItem from="1729771512674" duration="4464000" />
+      <workItem from="1729776947358" duration="7000" />
+      <workItem from="1729781424995" duration="215000" />
+      <workItem from="1729840469910" duration="11919000" />
+      <workItem from="1730274526003" duration="5854000" />
+      <workItem from="1730284630939" duration="68000" />
     </task>
-    <task id="LOCAL-00001" summary="pacs: tcp socket add tls">
+    <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
-      <created>1729608606809</created>
+      <created>1728306533754</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1729608606809</updated>
+      <updated>1728306533754</updated>
     </task>
-    <task id="LOCAL-00002" summary="pacs: tcp socket add tls">
+    <task id="LOCAL-00002" summary="add pip requirements.txt">
       <option name="closed" value="true" />
-      <created>1729608888505</created>
+      <created>1728307216076</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1729608888505</updated>
+      <updated>1728307216076</updated>
     </task>
-    <task id="LOCAL-00003" summary="pacs: tcp socket fix tls">
+    <task id="LOCAL-00003" summary="fix up">
       <option name="closed" value="true" />
-      <created>1729854222750</created>
+      <created>1728312704594</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1729854222750</updated>
+      <updated>1728312704594</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="daily work: add pacs tcp client">
+      <option name="closed" value="true" />
+      <created>1728484457860</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728484457860</updated>
+    </task>
+    <task id="LOCAL-00005" summary="daily work: jwt">
+      <option name="closed" value="true" />
+      <created>1728653890230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728653890230</updated>
+    </task>
+    <task id="LOCAL-00006" summary="daily work">
+      <option name="closed" value="true" />
+      <created>1729003685387</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729003685387</updated>
+    </task>
+    <task id="LOCAL-00007" summary="devcontainer">
+      <option name="closed" value="true" />
+      <created>1729522471953</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729522471953</updated>
+    </task>
+    <task id="LOCAL-00008" summary="devcontainer">
+      <option name="closed" value="true" />
+      <created>1729608987044</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608987044</updated>
+    </task>
+    <task id="LOCAL-00009" summary="devcontainer fix">
+      <option name="closed" value="true" />
+      <created>1729694696600</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729694696600</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docker compose .env">
+      <option name="closed" value="true" />
+      <created>1729864402122</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729864402122</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,22 +353,35 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pacs: tcp socket add tls" />
-    <MESSAGE value="pacs: tcp socket fix tls" />
-    <option name="LAST_COMMIT_MESSAGE" value="pacs: tcp socket fix tls" />
+    <MESSAGE value="start project" />
+    <MESSAGE value="add pip requirements.txt" />
+    <MESSAGE value="fix up" />
+    <MESSAGE value="daily work: add pacs tcp client" />
+    <MESSAGE value="daily work: jwt" />
+    <MESSAGE value="daily work" />
+    <MESSAGE value="devcontainer" />
+    <MESSAGE value="devcontainer fix" />
+    <MESSAGE value="docker compose .env" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker compose .env" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/pacs/tcp_client.py</url>
-          <line>21</line>
+          <url>file://$PROJECT_DIR$/core/settings.py</url>
+          <line>82</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/urls.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729864278294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
+    <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
   </component>
 </project>
