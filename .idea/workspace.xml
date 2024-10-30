@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a45193bc-fcf0-4353-98b9-dd78caf13964" name="Changes" comment="pacs: tcp socket fix tls">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2nmzcUedM09kkYlFfUkRpOZva99" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.backend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tcp_client.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Bookmarks" side_tool="true" />
+      <window_info id="Merge Requests" show_stripe_button="false" />
+      <window_info id="Commit_Guest" show_stripe_button="false" />
+      <window_info id="Pull Requests" />
+      <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
+      <window_info id="Learn" show_stripe_button="false" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1517857" />
+      <window_info id="Commit" order="1" weight="0.15145788" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="HfCacheToolWindow" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="0" visible="true" weight="0.23949999" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" weight="0.23949999" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23959121" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.23959121" />
+      <window_info anchor="bottom" id="Python Packages" order="5" weight="0.1" />
+      <window_info anchor="bottom" id="Python Console" order="6" weight="0.32950002" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.23959121" />
+      <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
+      <window_info anchor="right" id="SciView" show_stripe_button="false" />
+      <window_info anchor="right" id="Notifications" order="0" weight="0.33035713" />
+      <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <window_info anchor="right" id="Plots" order="5" weight="0.1" />
+    </layout>
+  </component>
+  <component name="RunManager" selected="Django Server.backend">
+    <configuration name="tcp_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/pacs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apps/pacs/tcp_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.backend (remote)" />
+      <item itemvalue="Django Server.backend" />
+      <item itemvalue="Python.tcp_client" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tcp_client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a45193bc-fcf0-4353-98b9-dd78caf13964" name="Changes" comment="" />
+      <created>1729593120637</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729593120637</updated>
+      <workItem from="1729593122623" duration="16487000" />
+      <workItem from="1729617253752" duration="70000" />
+      <workItem from="1729617594107" duration="327000" />
+      <workItem from="1729669374592" duration="577000" />
+      <workItem from="1729670313271" duration="4000" />
+      <workItem from="1729670488771" duration="3596000" />
+      <workItem from="1729675798132" duration="1650000" />
+      <workItem from="1729679642567" duration="380000" />
+      <workItem from="1729684518503" duration="1656000" />
+      <workItem from="1729688476626" duration="420000" />
+      <workItem from="1729688960891" duration="678000" />
+      <workItem from="1729689684572" duration="441000" />
+      <workItem from="1729690259410" duration="2848000" />
+      <workItem from="1729708248474" duration="1592000" />
+      <workItem from="1729755512577" duration="126000" />
+      <workItem from="1729755758149" duration="90000" />
+      <workItem from="1729756562712" duration="290000" />
+      <workItem from="1729756965595" duration="105000" />
+      <workItem from="1729757251780" duration="87000" />
+      <workItem from="1729757431624" duration="152000" />
+      <workItem from="1729757683089" duration="385000" />
+      <workItem from="1729758291820" duration="886000" />
+      <workItem from="1729759397149" duration="137000" />
+      <workItem from="1729759608445" duration="2017000" />
+      <workItem from="1729763193052" duration="4675000" />
+      <workItem from="1729769115132" duration="2021000" />
+      <workItem from="1729841484928" duration="247000" />
+      <workItem from="1729841837668" duration="1113000" />
+      <workItem from="1729843014948" duration="99000" />
+      <workItem from="1729843174955" duration="639000" />
+      <workItem from="1729843949109" duration="143000" />
+      <workItem from="1729844165334" duration="939000" />
+      <workItem from="1729845162756" duration="566000" />
+      <workItem from="1729845804494" duration="234000" />
+      <workItem from="1729846186819" duration="484000" />
+      <workItem from="1729846833513" duration="128000" />
+      <workItem from="1729847067656" duration="169000" />
+      <workItem from="1729847290705" duration="370000" />
+      <workItem from="1729847766487" duration="2940000" />
+      <workItem from="1729852582727" duration="92000" />
+      <workItem from="1729852753555" duration="721000" />
+      <workItem from="1729853671960" duration="1310000" />
+      <workItem from="1729855483303" duration="126000" />
+      <workItem from="1729857462274" duration="6764000" />
+      <workItem from="1730279622689" duration="137000" />
+      <workItem from="1730279817959" duration="545000" />
+      <workItem from="1730280369875" duration="201000" />
+      <workItem from="1730280579182" duration="3198000" />
+      <workItem from="1730285023698" duration="417000" />
+    </task>
+    <task id="LOCAL-00001" summary="pacs: tcp socket add tls">
+      <option name="closed" value="true" />
+      <created>1729608606809</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608606809</updated>
+    </task>
+    <task id="LOCAL-00002" summary="pacs: tcp socket add tls">
+      <option name="closed" value="true" />
+      <created>1729608888505</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608888505</updated>
+    </task>
+    <task id="LOCAL-00003" summary="pacs: tcp socket fix tls">
+      <option name="closed" value="true" />
+      <created>1729854222750</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729854222750</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pacs: tcp socket add tls" />
+    <MESSAGE value="pacs: tcp socket fix tls" />
+    <option name="LAST_COMMIT_MESSAGE" value="pacs: tcp socket fix tls" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/pacs/tcp_client.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729864278294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
+  </component>
+</project>
