@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="docker compose .env">
+      <change beforePath="$PROJECT_DIR$/.devcontainer/devcontainer.json" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/devcontainer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabDefaultAccount">
+    <option name="defaultAccountId" value="2dee5672-918c-45dc-8c87-acdbb9c671bf" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;keeper&quot;,
+      &quot;fullname&quot;: &quot;Artyom Yudin&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@mona.center-inform.ru:keeper/it-support-backend.git&quot;,
+    &quot;second&quot;: &quot;2dee5672-918c-45dc-8c87-acdbb9c671bf&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2n6Vxi8BLxNWX8uJNUyCLB8nkOB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.backend (local).executor": "Run",
+    "Django Server.backend (remote).executor": "Run",
+    "Django Server.backend.executor": "Run",
+    "Docker..devcontainer/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.backend: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Python.manage.executor": "Run",
+    "Python.tcp_client.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Volumes/Macintosh HD Dev/Development/PythonProject/IT-Support-Portal/backend/.devcontainer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="backend" is-module-sdk="true" working-directory="/app">
+        <option name="mappingSettings">
+          <PathMappingSettings>
+            <option name="pathMappings">
+              <list>
+                <mapping local-root=" /storage/development/it-support-backend" remote-root="/app" />
+              </list>
+            </option>
+          </PathMappingSettings>
+        </option>
+        <option name="mappings">
+          <PathMappingSettings>
+            <option name="pathMappings">
+              <list>
+                <mapping local-root=" /storage/development/it-support-backend" remote-root="/app" />
+              </list>
+            </option>
+          </PathMappingSettings>
+        </option>
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="backend" />
+        <option name="myWorkingDirectory" value="/app" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.devcontainer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/apps/pacs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yaml: Compose Deployment">
+    <configuration name="tcp_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/pacs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apps/pacs/tcp_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="backend" type="Python.DjangoServer" factoryName="Django server">
+      <module name="backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="core.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (backend)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name=".devcontainer/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Annabelle">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value=".devcontainer/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Annabelle">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Python.tcp_client" />
+        <item itemvalue="Docker..devcontainer/docker-compose.yaml: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="" />
+      <created>1728293760189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728293760189</updated>
+      <workItem from="1728293769690" duration="13785000" />
+      <workItem from="1728461451754" duration="12202000" />
+      <workItem from="1728561211308" duration="17000" />
+      <workItem from="1728561506548" duration="3000" />
+      <workItem from="1728561520559" duration="8000" />
+      <workItem from="1728633203976" duration="11807000" />
+      <workItem from="1728979642669" duration="1371000" />
+      <workItem from="1728981829091" duration="997000" />
+      <workItem from="1728984395392" duration="1436000" />
+      <workItem from="1728985970741" duration="623000" />
+      <workItem from="1728988389439" duration="63000" />
+      <workItem from="1728989299056" duration="4773000" />
+      <workItem from="1728994543751" duration="462000" />
+      <workItem from="1728995263502" duration="171000" />
+      <workItem from="1728995692455" duration="852000" />
+      <workItem from="1728998053531" duration="601000" />
+      <workItem from="1728998817671" duration="3567000" />
+      <workItem from="1729496289047" duration="323000" />
+      <workItem from="1729496648298" duration="437000" />
+      <workItem from="1729497199221" duration="49000" />
+      <workItem from="1729497314642" duration="560000" />
+      <workItem from="1729498085338" duration="2505000" />
+      <workItem from="1729501498150" duration="285000" />
+      <workItem from="1729501825462" duration="1250000" />
+      <workItem from="1729504396559" duration="2923000" />
+      <workItem from="1729509856725" duration="148000" />
+      <workItem from="1729517243261" duration="4883000" />
+      <workItem from="1729580541365" duration="2140000" />
+      <workItem from="1729582961912" duration="2667000" />
+      <workItem from="1729586678365" duration="4531000" />
+      <workItem from="1729667816829" duration="311000" />
+      <workItem from="1729668138081" duration="2225000" />
+      <workItem from="1729686311953" duration="6386000" />
+      <workItem from="1729754469520" duration="57000" />
+      <workItem from="1729754563045" duration="6147000" />
+      <workItem from="1729771512674" duration="4464000" />
+      <workItem from="1729776947358" duration="7000" />
+      <workItem from="1729781424995" duration="215000" />
+      <workItem from="1729840469910" duration="11919000" />
+      <workItem from="1730274526003" duration="5854000" />
+      <workItem from="1730284630939" duration="68000" />
+    </task>
+    <task id="LOCAL-00001" summary="start project">
+      <option name="closed" value="true" />
+      <created>1728306533754</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728306533754</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add pip requirements.txt">
+      <option name="closed" value="true" />
+      <created>1728307216076</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728307216076</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix up">
+      <option name="closed" value="true" />
+      <created>1728312704594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728312704594</updated>
+    </task>
+    <task id="LOCAL-00004" summary="daily work: add pacs tcp client">
+      <option name="closed" value="true" />
+      <created>1728484457860</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728484457860</updated>
+    </task>
+    <task id="LOCAL-00005" summary="daily work: jwt">
+      <option name="closed" value="true" />
+      <created>1728653890230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728653890230</updated>
+    </task>
+    <task id="LOCAL-00006" summary="daily work">
+      <option name="closed" value="true" />
+      <created>1729003685387</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729003685387</updated>
+    </task>
+    <task id="LOCAL-00007" summary="devcontainer">
+      <option name="closed" value="true" />
+      <created>1729522471953</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729522471953</updated>
+    </task>
+    <task id="LOCAL-00008" summary="devcontainer">
+      <option name="closed" value="true" />
+      <created>1729608987044</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729608987044</updated>
+    </task>
+    <task id="LOCAL-00009" summary="devcontainer fix">
+      <option name="closed" value="true" />
+      <created>1729694696600</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729694696600</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docker compose .env">
+      <option name="closed" value="true" />
+      <created>1729864402122</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729864402122</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start project" />
+    <MESSAGE value="add pip requirements.txt" />
+    <MESSAGE value="fix up" />
+    <MESSAGE value="daily work: add pacs tcp client" />
+    <MESSAGE value="daily work: jwt" />
+    <MESSAGE value="daily work" />
+    <MESSAGE value="devcontainer" />
+    <MESSAGE value="devcontainer fix" />
+    <MESSAGE value="docker compose .env" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker compose .env" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/settings.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/urls.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
+  </component>
+</project>
