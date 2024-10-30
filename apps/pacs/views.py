@@ -8,8 +8,6 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from .models import CardOwner, Event
 from .serializers import EventSerializer
 
-from .tcp_client import TcpClient
-
 #class CustomerList(generics.ListAPIView):
 #    # API endpoint that allows customer to be viewed.
 #    queryset = CardOwner.objects.all()
@@ -32,11 +30,3 @@ def get_all_events(request):
     queryset = Event.objects.all()
     serializer = EventSerializer(queryset, many=True)
     return Response(serializer.data)
-
-
-
-pacs_tcp_client = TcpClient()
-c = pacs_tcp_client.connect()
-
-#thread = threading.Thread(daemon=True, target=pacs_tcp_client.connect)
-#thread.start()
