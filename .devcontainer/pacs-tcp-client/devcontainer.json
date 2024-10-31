@@ -1,5 +1,5 @@
 {
-  name: "IT Support Backend",
+  name: "PACS TCP Socker Client",
   build: {
     dockerfile: "Dockerfile"
   },

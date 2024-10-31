@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="docker compose .env">
-      <change afterPath="$PROJECT_DIR$/services/pacs-tcp-client/tcp_client_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.devcontainer/pacs-tcp-client/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.devcontainer/pacs-tcp-client/devcontainer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.devcontainer/devcontainer.json" beforeDir="false" afterPath="$PROJECT_DIR$/.devcontainer/devcontainer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pacs-tcp-client/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/pacs-tcp-client/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Volumes/Macintosh HD Dev/Development/PythonProject/IT-Support-Portal/backend/.devcontainer",
+    "last_opened_file_path": "/Volumes/Macintosh HD Dev/Development/PythonProject/IT-Support-Portal/backend/.devcontainer/pacs-tcp-client",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -146,6 +146,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.devcontainer/pacs-tcp-client" />
       <recent name="$PROJECT_DIR$/.devcontainer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
