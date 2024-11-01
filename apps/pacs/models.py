@@ -19,12 +19,14 @@ class CardOwner(models.Model):
 
 class Event(models.Model):
     created = models.DateTimeField()
-    ap_id = models.ForeignKey(
-        AccessPoint, on_delete=models.PROTECT
-    )
-    owner_id = models.ForeignKey(
-        CardOwner, on_delete=models.PROTECT
-    )
+    #ap_id = models.ForeignKey(
+    #    AccessPoint, on_delete=models.PROTECT, null=True
+    #)
+    #owner_id = models.ForeignKey(
+    #    CardOwner, on_delete=models.PROTECT, null=True
+    #)
+    ap_id = models.IntegerField()
+    owner_id = models.IntegerField()
     card = models.IntegerField()
     code = models.IntegerField()
 

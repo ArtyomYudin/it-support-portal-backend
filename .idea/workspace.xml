@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="dev container">
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/it-support-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="fix up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0002_rename_pacsaccesspoint_accesspoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0003_cardowner_event_rename_ap_name_accesspoint_name_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0004_remove_accesspoint_id_remove_cardowner_id_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0005_alter_cardowner_user_principal_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0006_alter_event_ap_id_alter_event_owner_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +34,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitLabDefaultAccount">
-    <option name="defaultAccountId" value="2dee5672-918c-45dc-8c87-acdbb9c671bf" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
@@ -117,8 +120,8 @@
       <window_info id="Pull Requests" show_stripe_button="false" />
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18512556" />
-      <window_info id="Commit" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17174056" />
+      <window_info id="Commit" order="1" weight="0.18535715" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -129,11 +132,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.329938" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32978725" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.1" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.1" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.329938" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32978725" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -332,7 +335,8 @@
       <workItem from="1730306901286" duration="187000" />
       <workItem from="1730307242981" duration="102000" />
       <workItem from="1730307420235" duration="8723000" />
-      <workItem from="1730384154093" duration="1190000" />
+      <workItem from="1730384154093" duration="1235000" />
+      <workItem from="1730445030841" duration="5241000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -422,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730360427435</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix up">
+      <option name="closed" value="true" />
+      <created>1730385371187</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730385371187</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +454,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start project" />
     <MESSAGE value="add pip requirements.txt" />
-    <MESSAGE value="fix up" />
     <MESSAGE value="daily work: add pacs tcp client" />
     <MESSAGE value="daily work: jwt" />
     <MESSAGE value="daily work" />
@@ -450,7 +461,8 @@
     <MESSAGE value="devcontainer fix" />
     <MESSAGE value="docker compose .env" />
     <MESSAGE value="dev container" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev container" />
+    <MESSAGE value="fix up" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
