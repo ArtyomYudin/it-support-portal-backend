@@ -24,8 +24,8 @@ from .serializers import EventSerializer
     responses={200: EventSerializer}
 )
 @api_view(['GET'])
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
+#@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
 def get_all_events(request):
     queryset = Event.objects.all()
     serializer = EventSerializer(queryset, many=True)
