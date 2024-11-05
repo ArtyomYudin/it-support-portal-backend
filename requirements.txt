@@ -8,3 +8,4 @@ daphne~=4.1.2
 django-cors-headers~=4.6.0
 psycopg-binary~=3.2.3
 django-filter~=24.3
+channels_redis~=4.2.0

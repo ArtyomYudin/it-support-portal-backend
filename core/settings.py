@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'rest_framework',
+    'rest_framework_simplejwt',
     'drf_spectacular',
     'corsheaders',
     'apps.pacs.apps.PacsConfig',
@@ -82,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+#WSGI_APPLICATION = 'core.wsgi.application'
 ASGI_APPLICATION = 'core.asgi.application'
 
 
@@ -125,8 +126,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-#TIME_ZONE = 'UTC'
-TIME_ZONE = 'Europe/Moscow'
+TIME_ZONE = 'UTC'
+#TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -148,11 +149,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Channels settings
 CHANNEL_LAYERS = {
    'default': {
-       'BACKEND': 'asgi_redis.RedisChannelLayer',  # use redis backend
+       #"BACKEND": "channels.layers.InMemoryChannelLayer"
+       'BACKEND': 'channels_redis.core.RedisChannelLayer',  # use redis backend
        'CONFIG': {
-           'hosts': [os.environ.get('REDIS_URL', 'redis://localhost:6379')],  # set redis address
+           'hosts': [os.environ.get('REDIS_URL', os.getenv('REDIS_URL'))],  # set redis address
        },
-       'ROUTING': 'core.routing.channel_routing',  # load routing from our routing.py file
+       #'ROUTING': 'core.routing.channel_routing',  # load routing from our routing.py file
    },
 }
 
