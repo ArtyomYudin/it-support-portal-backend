@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="fix up">
-      <change afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pacs/routing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add channels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pacs-tcp-client/certs/cert.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pacs-tcp-client/certs/key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pacs-tcp-client/db_class.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pacs-tcp-client/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pacs-tcp-client/tcp_client_class.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,8 +115,8 @@
       <window_info id="Pull Requests" show_stripe_button="false" />
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17977916" />
-      <window_info id="Commit" order="1" weight="0.17977916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17977127" />
+      <window_info id="Commit" order="1" weight="0.17977127" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -134,11 +127,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23015267" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.17330827" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.23015267" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25244546" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -348,7 +341,7 @@
       <workItem from="1730307420235" duration="8723000" />
       <workItem from="1730384154093" duration="1235000" />
       <workItem from="1730445030841" duration="6578000" />
-      <workItem from="1730539216644" duration="26134000" />
+      <workItem from="1730539216644" duration="37735000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -478,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730560890960</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add channels">
+      <option name="closed" value="true" />
+      <created>1730818017019</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730818017019</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +507,8 @@
     <MESSAGE value="docker compose .env" />
     <MESSAGE value="dev container" />
     <MESSAGE value="fix up" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix up" />
+    <MESSAGE value="add channels" />
+    <option name="LAST_COMMIT_MESSAGE" value="add channels" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

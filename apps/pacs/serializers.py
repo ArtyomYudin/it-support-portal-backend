@@ -5,17 +5,20 @@ from .models import CardOwner, Event, AccessPoint
 class CardOwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = CardOwner
-        fields = ['system_id', 'lastname']
+        fields = ['system_id', 'lastname', 'firstname', 'secondname']
 
 class AccessPointSerializer(serializers.ModelSerializer):
     class Meta:
         model = AccessPoint
         fields = ['system_id', 'name']
 
-class EventSerializer(serializers.ModelSerializer):
-    #ap_id = AccessPointSerializer()
-    #owner_id = CardOwnerSerializer()
+class EventListSerializer(serializers.ModelSerializer):
+    ap_id = AccessPointSerializer()
+    owner_id = CardOwnerSerializer()
     class Meta:
         model = Event
-        fields = '__all__'
-        #fields = ['name']
+        fields = ['created', 'ap_id', 'owner_id']
+
+    #def get_current_day_events(self, instance):
+    #    event = instance.
+

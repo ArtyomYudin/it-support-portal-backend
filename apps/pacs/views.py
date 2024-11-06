@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from .models import CardOwner, Event
-from .serializers import EventSerializer
+from .serializers import EventListSerializer
 
 #class CustomerList(generics.ListAPIView):
 #    # API endpoint that allows customer to be viewed.
@@ -21,12 +21,13 @@ from .serializers import EventSerializer
     summary='List all events',
     description='',
     #request='',
-    responses={200: EventSerializer}
+    responses={200: EventListSerializer}
 )
+
 @api_view(['GET'])
 #@authentication_classes([JWTAuthentication])
 #@permission_classes([IsAuthenticated])
 def get_all_events(request):
     queryset = Event.objects.all()
-    serializer = EventSerializer(queryset, many=True)
+    serializer = EventListSerializer(queryset, many=True)
     return Response(serializer.data)
