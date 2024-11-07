@@ -165,6 +165,14 @@ CHANNEL_LAYERS = {
 #CELERY_TASK_SERIALIZER = 'json'
 #CELERY_RESULT_SERIALIZER = 'json'
 
+#RabbitMQ settings
+RMQ_HOST = 'rabbitmq'
+RMQ_PORT = '5672'
+RMQ_VIRTUAL_HOST = 'it_support'
+RMQ_USER = 'pacs_tcp_client'
+RMQ_PASSWORD = '97OUWipH4txB'
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

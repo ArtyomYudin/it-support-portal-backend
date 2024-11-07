@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add channels">
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="pacs channels">
+      <change afterPath="$PROJECT_DIR$/apps/pacs/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/pacs/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,31 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.backend (local).executor&quot;: &quot;Run&quot;,
-    &quot;Django Server.backend (remote).executor&quot;: &quot;Run&quot;,
-    &quot;Django Server.backend.executor&quot;: &quot;Run&quot;,
-    &quot;Docker..devcontainer/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.backend: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.postgresql: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tcp_client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/Macintosh HD Dev/Development/PythonProject/IT-Support-Portal/backend/.devcontainer/pacs-tcp-client&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.backend (local).executor": "Run",
+    "Django Server.backend (remote).executor": "Run",
+    "Django Server.backend.executor": "Run",
+    "Docker..devcontainer/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.backend: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.postgresql: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.manage.executor": "Run",
+    "Python.tcp_client.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/opt/project/it-support-backend/apps/pacs/management/commands",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="backend" is-module-sdk="true" working-directory="/app">
@@ -114,9 +116,10 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" show_stripe_button="false" />
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
+      <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17977127" />
-      <window_info id="Commit" order="1" weight="0.17977127" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13502994" />
+      <window_info id="Commit" order="1" weight="0.1575" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -127,11 +130,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.17330827" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.22268274" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25244546" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.22268274" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -145,6 +148,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/pacs/management/commands" />
+      <recent name="$PROJECT_DIR$/apps/pacs/management" />
       <recent name="$PROJECT_DIR$/.devcontainer/pacs-tcp-client" />
       <recent name="$PROJECT_DIR$/.devcontainer" />
     </key>
@@ -341,7 +346,10 @@
       <workItem from="1730307420235" duration="8723000" />
       <workItem from="1730384154093" duration="1235000" />
       <workItem from="1730445030841" duration="6578000" />
-      <workItem from="1730539216644" duration="37735000" />
+      <workItem from="1730539216644" duration="38547000" />
+      <workItem from="1730964712191" duration="199000" />
+      <workItem from="1730977017775" duration="61000" />
+      <workItem from="1730979667627" duration="7512000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -479,7 +487,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730818017019</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="pacs channels">
+      <option name="closed" value="true" />
+      <created>1730901034978</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730901034978</updated>
+    </task>
+    <task id="LOCAL-00019" summary="pacs channels">
+      <option name="closed" value="true" />
+      <created>1730901068680</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730901068680</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +532,9 @@
     <MESSAGE value="dev container" />
     <MESSAGE value="fix up" />
     <MESSAGE value="add channels" />
-    <option name="LAST_COMMIT_MESSAGE" value="add channels" />
+    <MESSAGE value="pacs channel consumers" />
+    <MESSAGE value="pacs channels" />
+    <option name="LAST_COMMIT_MESSAGE" value="pacs channels" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
