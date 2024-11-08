@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="pacs channels">
-      <change afterPath="$PROJECT_DIR$/apps/pacs/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pacs/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/jwt_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/asgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,31 +55,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.backend (local).executor": "Run",
-    "Django Server.backend (remote).executor": "Run",
-    "Django Server.backend.executor": "Run",
-    "Docker..devcontainer/docker-compose.yaml: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yaml.backend: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yaml.postgresql: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.manage.executor": "Run",
-    "Python.tcp_client.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/opt/project/it-support-backend/apps/pacs/management/commands",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.backend (local).executor&quot;: &quot;Run&quot;,
+    &quot;Django Server.backend (remote).executor&quot;: &quot;Run&quot;,
+    &quot;Django Server.backend.executor&quot;: &quot;Run&quot;,
+    &quot;Docker..devcontainer/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.backend: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.postgresql: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tcp_client.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/project/it-support-backend/apps/pacs/management/commands&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="backend" is-module-sdk="true" working-directory="/app">
@@ -118,8 +116,8 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13502994" />
-      <window_info id="Commit" order="1" weight="0.1575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16736528" />
+      <window_info id="Commit" order="1" weight="0.16736528" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -130,11 +128,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.22268274" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.1677979" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.22268274" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.21907994" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -350,6 +348,8 @@
       <workItem from="1730964712191" duration="199000" />
       <workItem from="1730977017775" duration="61000" />
       <workItem from="1730979667627" duration="7512000" />
+      <workItem from="1730990907450" duration="68000" />
+      <workItem from="1731055012291" duration="12188000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />

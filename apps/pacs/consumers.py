@@ -2,7 +2,9 @@ import json
 import logging
 from datetime import datetime
 
-from channels.generic.websocket import WebsocketConsumer
+from channels.generic.websocket import WebsocketConsumer, JsonWebsocketConsumer
+from django.contrib.auth.models import AnonymousUser
+
 from .models import Event
 from .serializers import EventListSerializer
 
@@ -17,8 +19,12 @@ class PacsConsumer(WebsocketConsumer):
         return events
 
     def connect(self):
-        logger.info("Connected to websocket")
-        self.accept()
+        #user = self.scope['user']
+        #if user.is_authenticated:
+            logger.info("Connected to websocket")
+            self.accept()
+        #else:
+        #    self.close(code=1000)
 
     def disconnect(self, close_code):
         logger.info("Disconnected to websocket")
@@ -31,4 +37,13 @@ class PacsConsumer(WebsocketConsumer):
         logger.info(response)
         logger.info('!!!!!!!!!!!!!!!!!!!!!!')
         self.current_day_event()
-        #self.send(text_data=text_data)
+        data = {
+            "event": "event_pacs_entry_exit",
+            "data": {
+                "results": {"eventDate": "2024-11-02 11:48:27", "displayName": "Test Tes Test", "accessPoint": "20"},
+                "total": 1
+            }
+        }
+        send_mess = json.dumps(data)
+        #print(send_mess)
+        #self.send(data)

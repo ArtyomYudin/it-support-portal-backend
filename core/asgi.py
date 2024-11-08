@@ -15,15 +15,16 @@ from channels.auth import AuthMiddlewareStack
 
 import pacs.routing
 
+from apps.jwt_middleware import JWTAuthMiddlewareStack
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 
 application = ProtocolTypeRouter({
     'http': get_asgi_application(),
     'websocket':
-        AuthMiddlewareStack(
+        #JWTAuthMiddlewareStack(
             URLRouter(
                 pacs.routing.websocket_urlpatterns
             )
-        ),
+        #),
 })
