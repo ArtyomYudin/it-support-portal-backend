@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="pacs channels">
-      <change afterPath="$PROJECT_DIR$/apps/jwt_middleware.py" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="jwt middleware">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/serializers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16736528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18850505" />
       <window_info id="Commit" order="1" weight="0.16736528" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -128,11 +126,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.1677979" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.16704719" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.21907994" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25913242" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -349,7 +347,7 @@
       <workItem from="1730977017775" duration="61000" />
       <workItem from="1730979667627" duration="7512000" />
       <workItem from="1730990907450" duration="68000" />
-      <workItem from="1731055012291" duration="12188000" />
+      <workItem from="1731055012291" duration="30320000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -503,7 +501,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730901068680</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="jwt middleware">
+      <option name="closed" value="true" />
+      <created>1731075116789</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731075116789</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +540,8 @@
     <MESSAGE value="add channels" />
     <MESSAGE value="pacs channel consumers" />
     <MESSAGE value="pacs channels" />
-    <option name="LAST_COMMIT_MESSAGE" value="pacs channels" />
+    <MESSAGE value="jwt middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="jwt middleware" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
