@@ -31,6 +31,9 @@ class Event(models.Model):
     card = models.IntegerField()
     code = models.IntegerField()
 
+    class Meta:
+        ordering = ['-created']
+
     def __str__(self):
         pass
         #return self.ap_name

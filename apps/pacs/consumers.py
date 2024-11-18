@@ -14,8 +14,9 @@ class PacsConsumer(JsonWebsocketConsumer):
 
     def current_day_event(self):
         events = Event.objects.filter(created__gte = datetime.now().date() - timedelta(days=2))
+        #events = Event.objects.order_by('created').last()
         tt = EventListSerializer(instance=events, many=True)
-        logger.info(tt.data)
+        logger.info(tt.data[0])
         return tt.data
 
     def connect(self):
@@ -29,6 +30,7 @@ class PacsConsumer(JsonWebsocketConsumer):
         self.accept()
 
     def disconnect(self, close_code):
+        async_to_sync(self.channel_layer.group_discard)("chat", self.channel_name)
         logger.info("Disconnected to websocket")
 
     def receive(self, text_data):
@@ -38,7 +40,7 @@ class PacsConsumer(JsonWebsocketConsumer):
         logger.info('!!!!!!!!!!!!!!!!!!!!!!')
         logger.info(response)
         logger.info('!!!!!!!!!!!!!!!!!!!!!!')
-        results_data = self.current_day_event()
+        #results_data = self.current_day_event()
         #data = {
         #    "event": "event_pacs_entry_exit",
         #    "data": {
@@ -47,25 +49,26 @@ class PacsConsumer(JsonWebsocketConsumer):
         #    }
         #}
         #results_data = [{"eventDate": "2024-11-02 11:48:27", "displayName": "Test Tes Test", "accessPoint": "20"}]
-        data = {
-            'event': 'event_pacs_entry_exit',
-            'data': {
-                'results': results_data,
-                'total': 1101,
-            }
-        }
+        #data = {
+        #    'event': 'event_pacs_entry_exit',
+        #    'data': {
+        #        'results': results_data,
+        #        'total': 1101,
+        #    }
+        #}
 
-        async_to_sync(self.channel_layer.group_send)(
-            'pacs',
-            {
-                'type': 'pacs.message',
-                'text': data,
-                'sender': 'Test'
-            },
-        )
+        #async_to_sync(self.channel_layer.group_send)(
+        #    'pacs',
+        #    {
+        #        'type': 'pacs.message',
+        #        'text': data,
+        #        'sender': 'Test'
+        #    },
+        #)
 
     def pacs_message(self, event):
+        print(event['text'])
         self.send_json(event['text'])
-        #send_mess = json.dumps(data)
-        #print(send_mess)
-        #self.send('data')
+    #    #send_mess = json.dumps(data)
+    #    #print(send_mess)
+    #    #self.send('data')

@@ -7,7 +7,9 @@
     <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="jwt middleware">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +69,7 @@
     &quot;Python.tcp_client.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/opt/project/it-support-backend/apps/pacs/management/commands&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -114,7 +117,7 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18850505" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1612367" />
       <window_info id="Commit" order="1" weight="0.16736528" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -126,11 +129,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.16704719" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.17959337" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25913242" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.23875561" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -283,8 +286,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
       </set>
     </attachedChunks>
   </component>
@@ -348,6 +351,9 @@
       <workItem from="1730979667627" duration="7512000" />
       <workItem from="1730990907450" duration="68000" />
       <workItem from="1731055012291" duration="30320000" />
+      <workItem from="1731498164139" duration="5996000" />
+      <workItem from="1731665272923" duration="938000" />
+      <workItem from="1731667182218" duration="5463000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
