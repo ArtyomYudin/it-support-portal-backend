@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="jwt middleware">
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="daily work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/consumers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,8 +114,8 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1612367" />
-      <window_info id="Commit" order="1" weight="0.16736528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14567183" />
+      <window_info id="Commit" order="1" weight="0.14567183" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -129,11 +126,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.17959337" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.13276628" />
       <window_info anchor="bottom" id="Services" order="4" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.23875561" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.13276628" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -353,7 +350,8 @@
       <workItem from="1731055012291" duration="30320000" />
       <workItem from="1731498164139" duration="5996000" />
       <workItem from="1731665272923" duration="938000" />
-      <workItem from="1731667182218" duration="5463000" />
+      <workItem from="1731667182218" duration="5489000" />
+      <workItem from="1732016715174" duration="2216000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -515,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731075116789</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="daily work">
+      <option name="closed" value="true" />
+      <created>1731939258015</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1731939258015</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +543,6 @@
     <MESSAGE value="add pip requirements.txt" />
     <MESSAGE value="daily work: add pacs tcp client" />
     <MESSAGE value="daily work: jwt" />
-    <MESSAGE value="daily work" />
     <MESSAGE value="devcontainer" />
     <MESSAGE value="devcontainer fix" />
     <MESSAGE value="docker compose .env" />
@@ -547,7 +552,8 @@
     <MESSAGE value="pacs channel consumers" />
     <MESSAGE value="pacs channels" />
     <MESSAGE value="jwt middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="jwt middleware" />
+    <MESSAGE value="daily work" />
+    <option name="LAST_COMMIT_MESSAGE" value="daily work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
