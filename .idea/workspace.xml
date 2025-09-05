@@ -5,8 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="daily work">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logging_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/pacs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/pacs_services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/security.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ws/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ws/handlers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ws/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ws/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ws/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/it-support-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/it-support-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/jwt_middleware.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0002_rename_user_principal_name_cardowner_lastname_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0003_alter_event_ap_id_alter_event_owner_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/routing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pacs/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/reset_migrations.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +89,6 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2n6Vxi8BLxNWX8uJNUyCLB8nkOB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,21 +102,29 @@
     &quot;Docker.docker-compose.yaml.backend: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yaml.postgresql: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;FastAPI.backend.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.manage.executor&quot;: &quot;Run&quot;,
     &quot;Python.tcp_client.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/opt/project/it-support-backend/apps/pacs/management/commands&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/project/it-support-backend/main.py&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="PyConsoleOptionsProvider">
@@ -109,13 +158,15 @@
     <layout>
       <window_info id="Bookmarks" show_stripe_button="false" side_tool="true" />
       <window_info id="Merge Requests" show_stripe_button="false" />
+      <window_info id="AI Playground" side_tool="true" />
+      <window_info id="Backup and Sync History" />
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" show_stripe_button="false" />
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14567183" />
-      <window_info id="Commit" order="1" weight="0.14567183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20535713" />
+      <window_info id="Commit" order="1" weight="0.20535713" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -125,18 +176,21 @@
       <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
-      <window_info anchor="bottom" id="Problems View" order="2" weight="0.26879698" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.13276628" />
-      <window_info anchor="bottom" id="Services" order="4" />
-      <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23015267" />
+      <window_info anchor="bottom" id="Problems View" order="2" weight="0.23062453" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.29041916" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.23062453" />
+      <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23062453" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.13276628" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.2304542" />
+      <window_info anchor="right" id="PR AI Assistant" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
-      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
-      <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.33035713" />
-      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Jupyter Variables" side_tool="true" />
+      <window_info anchor="right" id="Notifications" order="0" weight="0.32997698" />
+      <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.29552716" />
+      <window_info anchor="right" id="Database" order="2" weight="0.1525" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Plots" order="5" weight="0.1" />
@@ -150,11 +204,13 @@
       <recent name="$PROJECT_DIR$/.devcontainer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/core" />
       <recent name="$PROJECT_DIR$/apps/pacs" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.backend">
+  <component name="RunManager" selected="FastAPI.backend">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="it-support-backend" />
       <option name="ENV_FILES" value="" />
@@ -201,30 +257,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="backend" type="Python.DjangoServer" factoryName="Django server">
+    <configuration name="backend" type="Python.FastAPI">
+      <option name="additionalOptions" value="--reload --log-level=debug" />
+      <option name="file" value="$PROJECT_DIR$/main.py" />
       <module name="it-support-backend" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="core.settings" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (it-support-backend)" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.12" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="0.0.0.0" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
     <configuration name=".devcontainer/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Annabelle">
@@ -263,10 +310,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.backend" />
       <item itemvalue="Docker..devcontainer/docker-compose.yaml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yaml.postgresql: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+      <item itemvalue="FastAPI.backend" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.tcp_client" />
     </list>
@@ -283,8 +330,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
-        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.178" />
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
       </set>
     </attachedChunks>
   </component>
@@ -352,6 +399,20 @@
       <workItem from="1731665272923" duration="938000" />
       <workItem from="1731667182218" duration="5489000" />
       <workItem from="1732016715174" duration="2216000" />
+      <workItem from="1745570160615" duration="268000" />
+      <workItem from="1745570454248" duration="196000" />
+      <workItem from="1745570658493" duration="357000" />
+      <workItem from="1745571142174" duration="634000" />
+      <workItem from="1745571866953" duration="37000" />
+      <workItem from="1745571981823" duration="63000" />
+      <workItem from="1756568958664" duration="50000" />
+      <workItem from="1756644409837" duration="713000" />
+      <workItem from="1756646575337" duration="1556000" />
+      <workItem from="1756816794093" duration="1840000" />
+      <workItem from="1756819462222" duration="26673000" />
+      <workItem from="1756974525232" duration="2680000" />
+      <workItem from="1756977945465" duration="14283000" />
+      <workItem from="1757001393663" duration="24205000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -559,11 +620,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core/settings.py</url>
-          <line>83</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/core/urls.py</url>
           <line>22</line>
           <option name="timeStamp" value="2" />
@@ -578,7 +634,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1730320117089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services/pacs-tcp-client" />
+    <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
+    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1757080326727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
