@@ -1,15 +1,11 @@
 from sqlalchemy import String, Integer, DateTime, ForeignKey
-from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
-
 from typing import Optional, List
 from datetime import datetime
 
-class Base(DeclarativeBase):
-    pass
-
+from db.database import Base
 
 class AccessPoint(Base):
     __tablename__ = "pacs_access_point"

@@ -1,8 +1,8 @@
 import json
 
-from database.database import AsyncSessionLocal
-from services.pacs_services import get_pacs_events_by_id
-from ws.manager import manager
+from db.database import AsyncSessionLocal
+from services.pacs_service import get_pacs_events_by_id
+from api.ws.manager import manager
 # === Обработчики сообщений ===
 from core.logging_config import logger
 

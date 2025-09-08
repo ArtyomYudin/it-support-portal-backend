@@ -1,15 +1,10 @@
 from uuid import uuid4, UUID
-
 from sqlalchemy import String, DateTime, Boolean
-from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
+from datetime import datetime, timezone
 
-from datetime import datetime
-
-
-class Base(DeclarativeBase):
-    pass
+from db.database import Base
 
 
 class CoreUser(Base):
@@ -47,22 +42,22 @@ class CoreUser(Base):
 
     # Даты
     created: Mapped[datetime] = mapped_column(
-        DateTime,
-        default=datetime.now(),
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
         nullable=False
     )
-    updated: Mapped[datetime] = mapped_column(
-        DateTime,
-        default=datetime.now(),
-        onupdate=datetime.now(),
-        nullable=False
-    )
-    last_login: Mapped[datetime] = mapped_column(
-        DateTime,
-        default=datetime.now(),
-        # onlogin=datetime.now(),
-        nullable=False
-    )
+    # updated: Mapped[datetime] = mapped_column(
+    #     DateTime,
+    #     default=datetime.now(),
+    #     onupdate=datetime.now(),
+    #     nullable=False
+    # )
+    # last_login: Mapped[datetime] = mapped_column(
+    #     DateTime,
+    #     default=datetime.now(),
+    #     # onlogin=datetime.now(),
+    #     nullable=False
+    # )
 
     # Хэш пароля
     password_hash: Mapped[str] = mapped_column(String(128), nullable=False)

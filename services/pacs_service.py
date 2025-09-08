@@ -3,8 +3,7 @@ from datetime import datetime, timedelta
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from database.database import get_db
-from models.pacs import Event, CardOwner, AccessPoint
+from db.models import Event, CardOwner, AccessPoint
 
 async def get_pacs_events_data(db: AsyncSession) -> list[dict]:
     today = datetime.now().date()
@@ -21,7 +20,7 @@ async def get_pacs_events_data(db: AsyncSession) -> list[dict]:
         .select_from(Event)
         .outerjoin(CardOwner, Event.owner_id == CardOwner.system_id)
         .outerjoin(AccessPoint, Event.ap_id == AccessPoint.system_id)
-        .where(Event.created >= today, Event.created < tomorrow)
+        .where(Event.created >= today, Event.created < tomorrow, Event.code ==1)
         .order_by(Event.created.desc())
         # .limit(50)
     )
@@ -48,7 +47,7 @@ async def get_pacs_events_by_id(db: AsyncSession, event_id: int) -> list[dict]:
         .select_from(Event)
         .outerjoin(CardOwner, Event.owner_id == CardOwner.system_id)
         .outerjoin(AccessPoint, Event.ap_id == AccessPoint.system_id)
-        .where(Event.id == event_id)
+        .where(Event.id == event_id, Event.code ==1)
     )
     rows = result.all()
 

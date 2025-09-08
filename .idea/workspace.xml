@@ -4,51 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="daily work">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/logging_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/pacs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/pacs_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ws/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ws/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ws/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ws/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ws/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/it-support-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/it-support-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="close Django project&#10;start FastAPI">
+      <change afterPath="$PROJECT_DIR$/api/auth/routers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/auth/schemas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/create_superuser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jwt_middleware.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/consumers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/management/commands/pacs_rmq_consumer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0002_rename_user_principal_name_cardowner_lastname_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/0003_alter_event_ap_id_alter_event_owner_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/handlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/routing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/pacs/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/reset_migrations.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/alembic.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth.py_bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/script.py.mako" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/1b6d1df299ab_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pacs.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/pacs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbitmq/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset_migrations.sh" beforeDir="false" afterPath="$PROJECT_DIR$/reset_migrations.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pacs_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/pacs_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +152,7 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20535713" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15464285" />
       <window_info id="Commit" order="1" weight="0.20535713" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -173,27 +160,27 @@
       <window_info anchor="bottom" id="TODO" show_stripe_button="false" />
       <window_info anchor="bottom" id="HfCacheToolWindow" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.23062453" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.29041916" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.23062453" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.25244546" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.2863055" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23062453" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25201845" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.2304542" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32994732" />
       <window_info anchor="right" id="PR AI Assistant" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
-      <window_info anchor="right" id="Jupyter Variables" side_tool="true" />
       <window_info anchor="right" id="Notifications" order="0" weight="0.32997698" />
       <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.29552716" />
-      <window_info anchor="right" id="Database" order="2" weight="0.1525" />
+      <window_info anchor="right" id="Database" order="2" weight="0.21892858" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Plots" order="5" weight="0.1" />
+      <window_info anchor="right" id="Jupyter Variables" order="6" show_stripe_button="false" side_tool="true" weight="0.21892858" />
     </layout>
   </component>
   <component name="RecentsManager">
@@ -204,10 +191,11 @@
       <recent name="$PROJECT_DIR$/.devcontainer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/core" />
-      <recent name="$PROJECT_DIR$/apps/pacs" />
+      <recent name="$PROJECT_DIR$/api" />
+      <recent name="$PROJECT_DIR$/db" />
+      <recent name="$PROJECT_DIR$/models" />
     </key>
   </component>
   <component name="RunManager" selected="FastAPI.backend">
@@ -412,7 +400,7 @@
       <workItem from="1756819462222" duration="26673000" />
       <workItem from="1756974525232" duration="2680000" />
       <workItem from="1756977945465" duration="14283000" />
-      <workItem from="1757001393663" duration="24205000" />
+      <workItem from="1757001393663" duration="40769000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -582,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731939258015</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="close Django project&#10;start FastAPI">
+      <option name="closed" value="true" />
+      <created>1757082971334</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1757082971334</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +610,8 @@
     <MESSAGE value="pacs channels" />
     <MESSAGE value="jwt middleware" />
     <MESSAGE value="daily work" />
-    <option name="LAST_COMMIT_MESSAGE" value="daily work" />
+    <MESSAGE value="close Django project&#10;start FastAPI" />
+    <option name="LAST_COMMIT_MESSAGE" value="close Django project&#10;start FastAPI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -636,6 +633,6 @@
     <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1730320117089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services/pacs-tcp-client" />
     <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
-    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1757080326727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1757332851806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

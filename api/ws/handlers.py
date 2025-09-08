@@ -6,11 +6,11 @@ import logging
 from fastapi import WebSocket
 from pydantic import ValidationError
 
-from ws.schemas import ClientMessage, Event
-from ws.manager import manager
+from api.ws.schemas import ClientMessage, Event
+from api.ws.manager import manager
 from utils.security import decode_token
-from database.database import AsyncSessionLocal
-from services import pacs_services
+from db.database import AsyncSessionLocal
+from services import pacs_service
 
 logger = logging.getLogger("app.ws")  # Подлоггер для WebSocket
 
@@ -36,7 +36,7 @@ async def websocket_auth_handler(websocket: WebSocket):
                     logger.debug(f"WebSocket ({username}): получил сообщение {message.event}")
 
                     if message.event == Event.GET_PACS_INIT_VALUE:
-                        res = await pacs_services.get_pacs_events_data(db)
+                        res = await pacs_service.get_pacs_events_data(db)
                         await manager.send_personal_message(json.dumps({
                             "event": "event_pacs_entry_exit",
                             "data": {"results": res, "total": len(res)}

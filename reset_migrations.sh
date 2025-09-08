@@ -17,3 +17,17 @@ echo ">>> Применяем миграции..."
 alembic upgrade head
 
 echo ">>> Готово. База и миграции пересозданы с нуля."
+
+
+
+# 1. Удаляем старые файлы миграций
+rm -rf migrations/versions/*
+
+# 2. Сбрасываем указатель Alembic в БД
+alembic stamp base
+
+# 3. Генерируем новую миграцию (убедившись, что модели импортированы в env.py!)
+alembic revision --autogenerate -m "Initial migration"
+
+# 4. Применяем миграцию
+alembic upgrade head

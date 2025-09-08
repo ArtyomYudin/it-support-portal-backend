@@ -1,13 +1,11 @@
-import asyncio
-import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api import auth
 from core.settings import settings
-from ws.routes import ws_router
+from api.auth.routers import router as auth_router
+from api.ws.routes import ws_router
 from core.logging_config import logger  # импортируем логгер
 from rabbitmq.consumer import RabbitMQConsumer
 from rabbitmq.handlers import notifications_handler
@@ -46,9 +44,14 @@ app = FastAPI(title="IT Support Portal API", lifespan=lifespan)
 logger.info("Starting application...")
 
 # CORS (разреши фронтенду)
+origins = [
+    "http://localhost:4200",
+    "http://127.0.0.1:4200",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -65,8 +68,8 @@ app.add_middleware(
 #     asyncio.create_task(rabbitmq_client.consume_messages("my_queue"))
 #     logger.info("Все фоновые задачи запущены")
 
-# Подключаем роутер из auth.py
-app.include_router(auth.router)
+# Подключаем роутер из auth.py_bak
+app.include_router(auth_router)
 app.include_router(ws_router)
 
 @app.get("/")

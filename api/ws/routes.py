@@ -1,5 +1,5 @@
 from fastapi import APIRouter, WebSocket
-from ws.handlers import websocket_auth_handler
+from api.ws.handlers import websocket_auth_handler
 
 ws_router = APIRouter()
 
