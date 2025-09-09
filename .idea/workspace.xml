@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="restructure">
-      <change afterPath="$PROJECT_DIR$/db/import_old_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/models/employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="fix alembic and models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/9ceadc1fe9cb_make_created_field_timezone_aware.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/c16baf01b4db_initial_migration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/models/pacs.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/pacs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pacs_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/pacs_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,8 +126,8 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17392856" />
-      <window_info id="Commit" order="1" weight="0.19964287" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19749999" />
+      <window_info id="Commit" order="1" weight="0.23821428" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -147,7 +141,7 @@
       <window_info anchor="bottom" id="Services" order="4" weight="0.33044982" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23062453" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.33044982" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.2304542" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32994732" />
       <window_info anchor="right" id="PR AI Assistant" />
@@ -156,7 +150,7 @@
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
       <window_info anchor="right" id="Notifications" order="0" weight="0.32997698" />
       <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.29552716" />
-      <window_info active="true" anchor="right" id="Database" order="2" visible="true" weight="0.33035713" />
+      <window_info anchor="right" id="Database" order="2" weight="0.33035713" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Plots" order="5" weight="0.1" />
@@ -178,7 +172,7 @@
       <recent name="$PROJECT_DIR$/models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.import_old_data">
+  <component name="RunManager" selected="FastAPI.backend">
     <configuration name="import_old_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="it-support-backend" />
       <option name="ENV_FILES" value="" />
@@ -396,7 +390,7 @@
       <workItem from="1756974525232" duration="2680000" />
       <workItem from="1756977945465" duration="14283000" />
       <workItem from="1757001393663" duration="57071000" />
-      <workItem from="1757401926710" duration="5058000" />
+      <workItem from="1757401926710" duration="5741000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -590,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757333304101</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix alembic and models">
+      <option name="closed" value="true" />
+      <created>1757407136855</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1757407136855</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +626,8 @@
     <MESSAGE value="daily work" />
     <MESSAGE value="close Django project&#10;start FastAPI" />
     <MESSAGE value="restructure" />
-    <option name="LAST_COMMIT_MESSAGE" value="restructure" />
+    <MESSAGE value="fix alembic and models" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix alembic and models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -643,10 +646,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/it_support_backend$import_old_data.coverage" NAME="import_old_data Coverage Results" MODIFIED="1757344553850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
+    <SUITE FILE_PATH="coverage/it_support_backend$import_old_data.coverage" NAME="import_old_data Coverage Results" MODIFIED="1757407214739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1730320117089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services/pacs-tcp-client" />
     <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
-    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1757332851806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1757407306227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

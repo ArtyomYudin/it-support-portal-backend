@@ -25,7 +25,10 @@ class CardOwner(Base):
     __tablename__ = "pacs_card_owner"
 
     system_id: Mapped[int] = mapped_column(primary_key=True, default=0)
-    display_name: Mapped[Optional[str]] = mapped_column(String(255))
+    display_name: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
+    firstname: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
+    secondname: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
+    lastname: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
 
     events: Mapped[List["Event"]] = relationship(back_populates="owner")
     # связь через таблицу employee_card

@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Event, CardOwner, AccessPoint
+from db.models.pacs import Event, CardOwner, AccessPoint
 
 async def get_pacs_events_data(db: AsyncSession) -> list[dict]:
     today = datetime.now().date()
