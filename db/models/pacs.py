@@ -32,9 +32,10 @@ class CardOwner(Base):
 
     events: Mapped[List["Event"]] = relationship(back_populates="owner")
     # связь через таблицу employee_card
-    card_employees: Mapped[List["EmployeeCard"]] = relationship(back_populates="card")
+    card_employees: Mapped[List["EmployeeCard"]] = relationship(back_populates="card", overlaps="employees, cards" )
     employees: Mapped[List["Employee"]] = relationship(
-        secondary="employee_card", back_populates="cards"
+        secondary="employee_card", back_populates="cards",
+        overlaps="card,card_employees,employee,employee_cards"
     )
 
 

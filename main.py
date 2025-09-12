@@ -8,7 +8,7 @@ from api.auth.routers import router as auth_router
 from api.ws.routes import ws_router
 from core.logging_config import logger  # импортируем логгер
 from rabbitmq.consumer import RabbitMQConsumer
-from rabbitmq.handlers import notifications_handler
+from rabbitmq.handlers import pacs_notifications_handler
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -20,15 +20,15 @@ async def lifespan(app: FastAPI):
         settings.RMQ_HOST,
         settings.RMQ_PORT,
         settings.RMQ_VIRTUAL_HOST,
-        settings.RMQ_USER,
-        settings.RMQ_PASSWORD,
+        settings.RMQ_BACKEND_USER,
+        settings.RMQ_BACKEND_PASSWORD,
         logger,
     )
     await consumer.connect()
 
     # Регистрируем обработчики очередей
     # await consumer.consume("events", events_handler)
-    await consumer.consume("pacs_client", notifications_handler)
+    await consumer.consume(settings.RMQ_PACS_EXCHANGE_NAME, "backend", pacs_notifications_handler)
     # await consumer.consume("logs", logs_handler)
 
     # сохраняем consumer в app.state

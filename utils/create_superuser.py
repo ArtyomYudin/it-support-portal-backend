@@ -15,7 +15,7 @@ from sqlalchemy.orm import sessionmaker
 from passlib.context import CryptContext
 from sqlalchemy import select
 
-from db.models import CoreUser
+from db.models.core import CoreUser
 from db.database import Base  # Опционально для создания таблиц
 from core.settings import settings
 

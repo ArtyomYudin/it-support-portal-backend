@@ -56,7 +56,7 @@ class RabbitMQConsumer:
 
         raise ConnectionError(f"Не удалось подключиться к RabbitMQ по адресу {self.host}:{self.port}")
 
-    async def consume(self, queue_name: str, handler):
+    async def consume(self, exchange_name: str, queue_name: str, handler):
         """
         Подписка на очередь и обработка сообщений.
         handler — это асинхронная функция, которая принимает message: IncomingMessage
@@ -64,13 +64,14 @@ class RabbitMQConsumer:
         if not self.channel:
             raise RuntimeError("RabbitMQ channel is not initialized. Call connect() first.")
 
-        queue = await self.channel.declare_queue(queue_name, durable=True)
+        queue = await self.channel.declare_queue(f"{exchange_name}.{queue_name}", durable=True)
+        await queue.bind(exchange_name)  # все сообщения из exchange попадают в очередь
 
         async def wrapper(message: IncomingMessage):
             await self._handle_message(message, handler)
 
         await queue.consume(wrapper)
-        self.logger.info(f"Начал слушать очередь {queue_name}")
+        self.logger.info(f"Начал слушать очередь {exchange_name}.{queue_name}")
 
     async def _handle_message(self, message: IncomingMessage, handler):
         """Вызов пользовательского обработчика"""

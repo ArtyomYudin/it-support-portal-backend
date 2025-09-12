@@ -3,6 +3,8 @@
 """
 import json
 import logging
+
+from annotated_types.test_cases import cases
 from fastapi import WebSocket
 from pydantic import ValidationError
 
@@ -10,7 +12,7 @@ from api.ws.schemas import ClientMessage, Event
 from api.ws.manager import manager
 from utils.security import decode_token
 from db.database import AsyncSessionLocal
-from services import pacs_service
+from services import pacs_service, employee_service
 
 logger = logging.getLogger("app.ws")  # Подлоггер для WebSocket
 
@@ -35,12 +37,43 @@ async def websocket_auth_handler(websocket: WebSocket):
 
                     logger.debug(f"WebSocket ({username}): получил сообщение {message.event}")
 
-                    if message.event == Event.GET_PACS_INIT_VALUE:
-                        res = await pacs_service.get_pacs_events_data(db)
-                        await manager.send_personal_message(json.dumps({
-                            "event": "event_pacs_entry_exit",
-                            "data": {"results": res, "total": len(res)}
-                        }), websocket)
+                    match message.event:
+                        case Event.GET_PACS_INIT_VALUE:
+                            res = await pacs_service.get_pacs_events_data(db)
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_pacs_entry_exit",
+                                "data": {"results": res, "total": len(res)}
+                            }), websocket)
+                            res_last = await pacs_service.get_pacs_last_event(db)
+
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_pacs_last_event",
+                                "data": {"results": res_last, "total": len(res_last)}
+                            }), websocket)
+
+                        case Event.GET_DEPARTMENT_STRUCTURE_BY_UPN:
+                            structure = await employee_service.get_department_structure_by_upn(db, "a.yudin@center-inform.ru")
+                            await manager.send_personal_message(json.dumps({
+                                "event": 'event_department_structure_by_upn',
+                                "data": structure,
+                            }), websocket)
+
+                        case Event.GET_FILTERED_REQUEST_INITIATOR:
+                            filtered = await employee_service.get_filtered_employee(db, message.data)
+                            await manager.send_personal_message(json.dumps({
+                                "event": 'event_filtered_employee',
+                                "data": filtered,
+                            }), websocket)
+
+                        case Event.GET_PACS_EMPLOYEE_LAST_EVENT:
+                            res = await pacs_service.get_pacs_last_event(db, message.data)
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_pacs_employee_last_event",
+                                "data": {"results": res, "total": len(res)}
+                            }), websocket)
+                            #  event: 'event_filtered_employee',
+                            #  data: filteredEmployeeArray,
+
                     # if message.type == "ping":
                     #     await manager.send_personal_message(json.dumps({"type": "pong"}), websocket)
                     # elif message.type == "chat":

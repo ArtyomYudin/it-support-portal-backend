@@ -28,7 +28,7 @@ class Employee(Base):
     # связь через таблицу employee_card
     employee_cards: Mapped[List["EmployeeCard"]] = relationship(back_populates="employee")
     cards: Mapped[List["CardOwner"]] = relationship(
-        secondary="employee_card", back_populates="employees"
+        secondary="employee_card", back_populates="employees", overlaps="employee_cards"
     )
 
     # обратные связи (когда сотрудник — менеджер)
@@ -103,5 +103,5 @@ class EmployeeCard(Base):
     card_id: Mapped[int] = mapped_column(
         ForeignKey("pacs_card_owner.system_id"), primary_key=True
     )
-    employee: Mapped["Employee"] = relationship(back_populates="employee_cards")
-    card: Mapped["CardOwner"] = relationship(back_populates="card_employees")
+    employee: Mapped["Employee"] = relationship(back_populates="employee_cards", overlaps="cards")
+    card: Mapped["CardOwner"] = relationship(back_populates="card_employees", overlaps="employees, cards")

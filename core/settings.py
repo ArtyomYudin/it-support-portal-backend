@@ -26,8 +26,15 @@ class Settings(BaseSettings):
     RMQ_HOST: str = os.getenv("RMQ_HOST", "rabbitmq")
     RMQ_PORT: int = int(os.getenv("RMQ_PORT", 5672))
     RMQ_VIRTUAL_HOST: str = os.getenv("RMQ_VIRTUAL_HOST", "/")
-    RMQ_USER: str = os.getenv("RMQ_USER", "rabbitmq")
-    RMQ_PASSWORD: str = os.getenv("RMQ_PASSWORD", "rabbitmq")
+    RMQ_BACKEND_USER: str = os.getenv("RMQ_BACKEND_USER", "rabbitmq")
+    RMQ_BACKEND_PASSWORD: str = os.getenv("RMQ_BACKEND_PASSWORD", "rabbitmq")
+    RMQ_CELERY_USER: str = os.getenv("RMQ_CELERY_USER", "rabbitmq")
+    RMQ_CELERY_PASSWORD: str = os.getenv("RMQ_CELERY_PASSWORD", "rabbitmq")
+    RMQ_PACS_EXCHANGE_NAME: str = os.getenv("RMQ_PACS_EXCHANGE_NAME", "quest")
+
+    # Zabbix
+    ZABBIX_HOST: str = os.getenv("ZABBIX_HOST", "localhost")
+    ZABBIX_AUTH_TOKEN: str = os.getenv("ZABBIX_AUTH_TOKEN", "zabbix_token")
 
     # App
     HOST: str = "0.0.0.0"

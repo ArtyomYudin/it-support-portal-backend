@@ -12,3 +12,5 @@ pydantic-settings
 colorlog
 alembic
 python-multipart
+celery
+aiohttp
