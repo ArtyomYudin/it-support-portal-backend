@@ -46,7 +46,7 @@ app.autodiscover_tasks(["tasks"])
 app.conf.beat_schedule = {
     'fetch-provider-info-every-5-minutes': {
         'task': 'tasks.zabbix_task.fetch_provider_info_task',  # Укажите правильный путь!
-        'schedule': crontab(minute='*/5'),  # Каждые 5 минут
+        'schedule': crontab(minute='*/1'),  # Каждые 1 минут
         'kwargs': {'token': None},   # Передаём token=None, если нужно — замените на актуальный токен
     },
 }

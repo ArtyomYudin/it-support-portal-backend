@@ -31,6 +31,7 @@ class Settings(BaseSettings):
     RMQ_CELERY_USER: str = os.getenv("RMQ_CELERY_USER", "rabbitmq")
     RMQ_CELERY_PASSWORD: str = os.getenv("RMQ_CELERY_PASSWORD", "rabbitmq")
     RMQ_PACS_EXCHANGE_NAME: str = os.getenv("RMQ_PACS_EXCHANGE_NAME", "quest")
+    RMQ_CELERY_BEAT_EXCHANGE_NAME: str = os.getenv("RMQ_CELERY_BEAT_EXCHANGE_NAME", "celery_beat")
 
     # Zabbix
     ZABBIX_HOST: str = os.getenv("ZABBIX_HOST", "localhost")

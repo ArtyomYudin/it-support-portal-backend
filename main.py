@@ -8,7 +8,7 @@ from api.auth.routers import router as auth_router
 from api.ws.routes import ws_router
 from core.logging_config import logger  # импортируем логгер
 from rabbitmq.consumer import RabbitMQConsumer
-from rabbitmq.handlers import pacs_notifications_handler
+from rabbitmq.handlers import pacs_handler, celery_beat_handler
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -28,7 +28,8 @@ async def lifespan(app: FastAPI):
 
     # Регистрируем обработчики очередей
     # await consumer.consume("events", events_handler)
-    await consumer.consume(settings.RMQ_PACS_EXCHANGE_NAME, "backend", pacs_notifications_handler)
+    await consumer.consume(settings.RMQ_PACS_EXCHANGE_NAME, "backend", pacs_handler)
+    await consumer.consume(settings.RMQ_CELERY_BEAT_EXCHANGE_NAME, "celery_beat", celery_beat_handler)
     # await consumer.consume("logs", logs_handler)
 
     # сохраняем consumer в app.state

@@ -14,6 +14,9 @@ class Event(str, Enum):
     GET_DEPARTMENT_STRUCTURE_BY_UPN = "getDepartmentStructureByUPN"
     GET_FILTERED_REQUEST_INITIATOR = "getFilteredRequestInitiator"
 
+    # Celery Beat
+    EVENT_PROVIDER_INFO = "event_provider_info"
+
     # getFilteredRequestInitiator
     # добавьте другие события при необходимости
 
