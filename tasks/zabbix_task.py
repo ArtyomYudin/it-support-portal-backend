@@ -6,8 +6,54 @@ from celery import shared_task
 
 from core.settings import settings
 from core.logging_config import logger
-from api.ws.manager import manager
 
+
+RABBITMQ_URL = f"amqp://{settings.RMQ_CELERY_USER}:{settings.RMQ_CELERY_PASSWORD}@{settings.RMQ_HOST}:{settings.RMQ_PORT}/{settings.RMQ_VIRTUAL_HOST}"
+
+
+async def _fetch_data(session, post_data):
+    async with session.post(
+            url=settings.ZABBIX_HOST,
+            json=post_data,
+            headers={"Content-Type": "application/json-rpc"},
+    ) as response:
+        data = await response.json()
+        return data.get("result", [])
+
+
+async def _get_hardware_groups(token: str = None, retry_count: int = 0):
+    post_data = {
+        "jsonrpc": "2.0",
+        "method": "hostgroup.get",
+        "id": 1,
+        "auth": settings.ZABBIX_AUTH_TOKEN,
+        "params": {
+            "output": ["groupid", "name"],
+        },
+    }
+    try:
+        async with aiohttp.ClientSession() as session:
+            groups = []
+            hardware_groups =  await _fetch_data(session, post_data)
+            for group in hardware_groups:
+                groups.append({ "id": group["groupid"], "name": group["name"] })
+            return groups
+
+    except Exception as e:
+        logger.error(f"get_provider_info error: {e}")
+        if retry_count < 3:
+            return await _get_hardware_groups(token, retry_count + 1)
+        return False
+
+async def _publish_to_exchange(payload: dict, exchange_name: str = "celery_beat"):
+    connection = await aio_pika.connect_robust(RABBITMQ_URL)
+    async with connection:
+        channel = await connection.channel()
+        exchange = await channel.declare_exchange(exchange_name, aio_pika.ExchangeType.FANOUT)
+        await exchange.publish(
+            aio_pika.Message(body=json.dumps(payload).encode()),
+            routing_key=""
+        )
 
 async def get_provider_info(token: str = None, retry_count: int = 0):
     if retry_count > 0:
@@ -51,21 +97,12 @@ async def get_provider_info(token: str = None, retry_count: int = 0):
         },
     }
 
-    async def fetch(session, post_data):
-        async with session.post(
-                url=settings.ZABBIX_HOST,
-                json=post_data,
-                headers={"Content-Type": "application/json-rpc"},
-        ) as response:
-            data = await response.json()
-            return data.get("result", [])
-
     try:
         async with aiohttp.ClientSession() as session:
             # Параллельные запросы к двум хостам
             results_host1, results_host2 = await asyncio.gather(
-                fetch(session, post_data_host_1),
-                fetch(session, post_data_host_2)
+                _fetch_data(session, post_data_host_1),
+                _fetch_data(session, post_data_host_2)
             )
             # Объединяем результаты
             combined_results = results_host1 + results_host2
@@ -88,28 +125,74 @@ async def publish_provider_info(token: str ):
         "outSpeedErTelecom200": f"{int(provider_info[5]['lastvalue']) / 1000 / 1000:.2f}",
     }
 
-    url = f"amqp://{settings.RMQ_CELERY_USER}:{settings.RMQ_CELERY_PASSWORD}@{settings.RMQ_HOST}:{settings.RMQ_PORT}/{settings.RMQ_VIRTUAL_HOST}"
-    connection = await aio_pika.connect_robust(url)
-
     payload = {
         "event": "event_provider_info",
         "data": {"results": provider_speed, "total": len(provider_speed)},
     }
 
-    async with connection:
-        channel = await connection.channel()
-        # Fanout exchange для всех подписчиков
-        exchange = await channel.declare_exchange("celery_beat", aio_pika.ExchangeType.FANOUT)
-        await exchange.publish(
-            aio_pika.Message(body=json.dumps(payload).encode()),
-            routing_key=""
-        )
+    await _publish_to_exchange(payload)
+
+async def get_hardware_group_problem(token: str = None, retry_count: int = 0):
+    hardware_groups = await _get_hardware_groups(token=token)
+
+    if retry_count > 0:
+        logger.info("Retry fetch!")
+
+    hw_group_problems = []
+
+    for hardware_group in hardware_groups:
+        post_data = {
+            "jsonrpc": "2.0",
+            "method": "problem.get",
+            "id": 1,
+            "auth": settings.ZABBIX_AUTH_TOKEN,
+            "params": {
+                "groupids": hardware_group["id"],
+                "severities": [2, 3, 4, 5],
+                "sortfield": ["eventid"],
+                "sortorder": "DESC",
+            }
+        }
+
+        try:
+            async with aiohttp.ClientSession() as session:
+                problems =  await _fetch_data(session, post_data)
+                hw_group_problems.append({ "group": hardware_group["name"], "event": problems, "count": len(problems) })
+        except Exception as e:
+            logger.error(f"Failed to fetch problems for group {hardware_group['name']}: {e}")
+            # Пропускаем эту группу, но не падаем и не ретраим всю функцию
+            continue
+
+    return hw_group_problems
+
+async def publish_hardware_group_problem(token: str):
+    hardware_problem = await get_hardware_group_problem(token=token)
+    payload = {
+        "event": "event_hardware_group_alarm",
+        "data": {"results": hardware_problem, "total": len(hardware_problem)},
+    }
+    await _publish_to_exchange(payload)
+
+
+async def get_avaya_e1_channel_info():
+    pass
+
+async def publish_avaya_e1_channel_info():
+    pass
 
 
 @shared_task(bind=True, max_retries=3)
 def fetch_provider_info_task(self, token=None):
     try:
         asyncio.run(publish_provider_info(token=token))
+    except Exception as exc:
+        logger.error(f"Task failed: {exc}")
+        raise self.retry(exc=exc, countdown=2 ** self.request.retries)
+
+@shared_task(bind=True, max_retries=3)
+def fetch_hardware_group_problem_task(self, token=None):
+    try:
+        asyncio.run(publish_hardware_group_problem(token=token))
     except Exception as exc:
         logger.error(f"Task failed: {exc}")
         raise self.retry(exc=exc, countdown=2 ** self.request.retries)

@@ -16,6 +16,7 @@ class Event(str, Enum):
 
     # Celery Beat
     EVENT_PROVIDER_INFO = "event_provider_info"
+    EVENT_HARDWARE_GROUP_ALARM = "event_hardware_group_alarm"
 
     # getFilteredRequestInitiator
     # добавьте другие события при необходимости

@@ -43,6 +43,14 @@ async def celery_beat_handler(message):
                 })
             )
 
+        case Event.EVENT_HARDWARE_GROUP_ALARM:
+            await manager.broadcast(json.dumps(
+                {
+                    "event": "event_hardware_group_alarm",
+                    "data": message_body["data"]
+                })
+            )
+
 
 async def logs_handler(message):
     logger.info(f"📝 [logs] {message.body.decode()}")

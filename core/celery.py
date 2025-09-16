@@ -49,4 +49,9 @@ app.conf.beat_schedule = {
         'schedule': crontab(minute='*/1'),  # Каждые 1 минут
         'kwargs': {'token': None},   # Передаём token=None, если нужно — замените на актуальный токен
     },
+    'fetch-hardware-problem-info-every-5-minutes': {
+        'task': 'tasks.zabbix_task.fetch_hardware_group_problem_task',  # Укажите правильный путь!
+        'schedule': crontab(minute='*/1'),  # Каждые 1 минут
+        'kwargs': {'token': None},   # Передаём token=None, если нужно — замените на актуальный токен
+    },
 }
