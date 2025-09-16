@@ -2,13 +2,17 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from kombu import Connection
 
+import core.celery
 from core.settings import settings
 from api.auth.routers import router as auth_router
 from api.ws.routes import ws_router
 from core.logging_config import logger  # импортируем логгер
 from rabbitmq.consumer import RabbitMQConsumer
 from rabbitmq.handlers import pacs_handler, celery_beat_handler
+
+from tasks.vpn_task import initializing_db_notification_listener
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -35,6 +39,13 @@ async def lifespan(app: FastAPI):
     # сохраняем consumer в app.state
     app.state.consumer = consumer
 
+    celery_broker = core.celery.app.conf.broker_url
+    try:
+        with Connection(celery_broker).connect() as conn:
+            initializing_db_notification_listener.delay()
+            print("Task sent to Celery successfully ✅")
+    except Exception as e:
+        print(f"⚠️ Broker unavailable: {e}")
     yield  # <--- точка работы приложения
 
     # Завершение

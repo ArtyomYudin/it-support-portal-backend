@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 # from models.pacs import Base  # мои модели (AccessPoint, CardOwner, Event)
 
 from db.database import Base
-from db.models import core, employee, pacs
+from db.models import core, employee, pacs, vpn
 
 
 # Загружаем переменные окружения

@@ -9,11 +9,15 @@ from kombu import Queue
 from core.settings import settings
 # ЯВНО ИМПОРТИРУЕМ МОДУЛЬ С ЗАДАЧАМИ — ЭТО КЛЮЧЕВОЕ!
 import tasks.zabbix_task
+import tasks.vpn_task
 
 app = Celery('core')
 
 # Подключаемся к RabbitMQ
-app.conf.broker_url = f"amqp://{settings.RMQ_CELERY_USER}:{settings.RMQ_CELERY_PASSWORD}@{settings.RMQ_HOST}:{settings.RMQ_PORT}/{settings.RMQ_VIRTUAL_HOST}"
+app.conf.broker_url = (
+    f"amqp://{settings.RMQ_CELERY_USER}:{settings.RMQ_CELERY_PASSWORD}"
+    f"@{settings.RMQ_HOST}:{settings.RMQ_PORT}/{settings.RMQ_VIRTUAL_HOST}"
+)
 #
 # # Результаты задач тоже можно хранить в RabbitMQ (через RPC) или, лучше, в Redis/DB
 app.conf.result_backend = 'rpc://'  # или 'redis://localhost:6379/0'

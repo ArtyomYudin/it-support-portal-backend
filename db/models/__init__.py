@@ -2,5 +2,6 @@
 from . import employee
 from . import pacs
 from . import core
+from . import vpn
 
-__all__ = ["employee", "pacs", "core"]
+__all__ = ["employee", "pacs", "core", "vpn"]
