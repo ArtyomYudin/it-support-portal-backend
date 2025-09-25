@@ -12,7 +12,7 @@ from api.ws.schemas import ClientMessage, Event
 from api.ws.manager import manager
 from utils.security import decode_token
 from db.database import AsyncSessionLocal
-from services import pacs_service, employee_service
+from services import pacs_service, employee_service, avaya_service
 
 logger = logging.getLogger("app.ws")  # Подлоггер для WebSocket
 
@@ -66,13 +66,20 @@ async def websocket_auth_handler(websocket: WebSocket):
                             }), websocket)
 
                         case Event.GET_PACS_EMPLOYEE_LAST_EVENT:
-                            res = await pacs_service.get_pacs_last_event(db, message.data)
+                            employee_last_event = await pacs_service.get_pacs_last_event(db, message.data)
                             await manager.send_personal_message(json.dumps({
                                 "event": "event_pacs_employee_last_event",
-                                "data": {"results": res, "total": len(res)}
+                                "data": {"results": employee_last_event, "total": len(employee_last_event)}
                             }), websocket)
                             #  event: 'event_filtered_employee',
                             #  data: filteredEmployeeArray,
+
+                        case Event.GET_AVAYA_CDR:
+                            avaya_cdr = await avaya_service.get_avaya_cdr_list(db, int(message.data))
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_avaya_cdr",
+                                "data": {"results": avaya_cdr, "total": len(avaya_cdr)}
+                            }), websocket)
 
                     # if message.type == "ping":
                     #     await manager.send_personal_message(json.dumps({"type": "pong"}), websocket)

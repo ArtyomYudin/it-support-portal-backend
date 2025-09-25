@@ -1,5 +1,6 @@
 import asyncio
 
+import aio_pika
 from aio_pika import RobustConnection, RobustChannel, connect_robust, IncomingMessage
 from aiormq import AMQPConnectionError
 
@@ -63,6 +64,12 @@ class RabbitMQConsumer:
         """
         if not self.channel:
             raise RuntimeError("RabbitMQ channel is not initialized. Call connect() first.")
+
+        exchange = await self.channel.declare_exchange(
+            exchange_name,
+            aio_pika.ExchangeType.FANOUT,
+            durable=True
+        )
 
         queue = await self.channel.declare_queue(f"{exchange_name}.{queue_name}", durable=True)
         await queue.bind(exchange_name)  # все сообщения из exchange попадают в очередь

@@ -6,7 +6,7 @@ from celery import shared_task
 
 from core.settings import settings
 from core.logging_config import logger
-
+from utils.celery import publish_to_exchange
 
 RABBITMQ_URL = f"amqp://{settings.RMQ_CELERY_USER}:{settings.RMQ_CELERY_PASSWORD}@{settings.RMQ_HOST}:{settings.RMQ_PORT}/{settings.RMQ_VIRTUAL_HOST}"
 
@@ -44,16 +44,6 @@ async def _get_hardware_groups(token: str = None, retry_count: int = 0):
         if retry_count < 3:
             return await _get_hardware_groups(token, retry_count + 1)
         return False
-
-async def _publish_to_exchange(payload: dict, exchange_name: str = "celery_beat"):
-    connection = await aio_pika.connect_robust(RABBITMQ_URL)
-    async with connection:
-        channel = await connection.channel()
-        exchange = await channel.declare_exchange(exchange_name, aio_pika.ExchangeType.FANOUT)
-        await exchange.publish(
-            aio_pika.Message(body=json.dumps(payload).encode()),
-            routing_key=""
-        )
 
 async def get_provider_info(token: str = None, retry_count: int = 0):
     if retry_count > 0:
@@ -130,7 +120,7 @@ async def publish_provider_info(token: str ):
         "data": {"results": provider_speed, "total": len(provider_speed)},
     }
 
-    await _publish_to_exchange(payload)
+    await publish_to_exchange(payload, RABBITMQ_URL)
 
 async def get_hardware_group_problem(token: str = None, retry_count: int = 0):
     hardware_groups = await _get_hardware_groups(token=token)
@@ -171,7 +161,7 @@ async def publish_hardware_group_problem(token: str):
         "event": "event_hardware_group_alarm",
         "data": {"results": hardware_problem, "total": len(hardware_problem)},
     }
-    await _publish_to_exchange(payload)
+    await publish_to_exchange(payload, RABBITMQ_URL)
 
 
 async def get_avaya_e1_channel_info():

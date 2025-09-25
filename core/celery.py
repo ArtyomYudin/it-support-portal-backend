@@ -9,7 +9,6 @@ from kombu import Queue
 from core.settings import settings
 # ЯВНО ИМПОРТИРУЕМ МОДУЛЬ С ЗАДАЧАМИ — ЭТО КЛЮЧЕВОЕ!
 import tasks.zabbix_task
-import tasks.vpn_task
 
 app = Celery('core')
 
@@ -38,9 +37,11 @@ app.conf.update(
     timezone="Europe/Moscow",
     enable_utc=True,
 
-    # Управление prefetch (распределение задач по воркерам)
-    worker_prefetch_multiplier=1,
+
+    worker_prefetch_multiplier = 1,  # брать по одной задаче — важно для долгих задач
     task_acks_late=True,  # подтверждаем выполнение только после завершения задачи
+    task_acks_on_failure_or_timeout = False  # не подтверждать, если задача упала или таймаут
+
 )
 
 # Автообнаружение задач

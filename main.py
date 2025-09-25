@@ -1,3 +1,4 @@
+import asyncio
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -11,8 +12,8 @@ from api.ws.routes import ws_router
 from core.logging_config import logger  # импортируем логгер
 from rabbitmq.consumer import RabbitMQConsumer
 from rabbitmq.handlers import pacs_handler, celery_beat_handler
+from services.listener_service import listen_to_channel
 
-from tasks.vpn_task import initializing_db_notification_listener
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -39,14 +40,22 @@ async def lifespan(app: FastAPI):
     # сохраняем consumer в app.state
     app.state.consumer = consumer
 
-    celery_broker = core.celery.app.conf.broker_url
-    try:
-        with Connection(celery_broker).connect() as conn:
-            initializing_db_notification_listener.delay()
-            print("Task sent to Celery successfully ✅")
-    except Exception as e:
-        print(f"⚠️ Broker unavailable: {e}")
+    # Запускаем фоновую задачу
+    app.state.listen_task = asyncio.create_task(listen_to_channel())
+    logger.info("Фоновая задача 'listen_to_channel' запущена")
+
+
     yield  # <--- точка работы приложения
+
+    # Завершаем задачу
+    if hasattr(app.state, 'listen_task') and not app.state.listen_task.done():
+        app.state.listen_task.cancel()
+        try:
+            await app.state.listen_task
+        except asyncio.CancelledError:
+            logger.info("Задача 'listen_to_channel' успешно отменена")
+        except Exception as e:
+            logger.error(f"Ошибка при отмене задачи: {e}")
 
     # Завершение
     await consumer.close()

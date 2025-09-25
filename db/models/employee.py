@@ -18,7 +18,7 @@ class Employee(Base):
 
     department_id: Mapped[int] = mapped_column(ForeignKey("department.id"))
     position_id: Mapped[int] = mapped_column(ForeignKey("position.id"))
-    call_number: Mapped[Optional[int]] = mapped_column(Integer, index=True)
+    call_number: Mapped[Optional[str]] = mapped_column(String(25), index=True)
 
     # связи
     department: Mapped["Department"] = relationship(back_populates="employees", foreign_keys=[department_id])

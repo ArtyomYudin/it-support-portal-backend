@@ -7,11 +7,11 @@ from api.ws.manager import manager
 # === Обработчики сообщений ===
 from core.logging_config import logger
 
-async def events_handler(message):
-    logger.info(f"📩 [events] {message.body.decode()}")
+# async def events_handler(message):
+#     logger.debug(f"📩 [events] {message.body.decode()}")
 
 async def pacs_handler(message):
-    logger.info(f"🔔 [PACS notifications] {message.body.decode()}")
+    logger.debug(f"🔔 [PACS notifications] {message.body.decode()}")
     message_body = message.body.decode()
     data = json.loads(message_body)
 
@@ -32,7 +32,7 @@ async def pacs_handler(message):
         )
 
 async def celery_beat_handler(message):
-    logger.info(f"🔔 [CELERY BEAT notifications] {message.body.decode()}")
+    logger.debug(f"🔔 [CELERY BEAT notifications] {message.body.decode()}")
     message_body = json.loads(message.body.decode())
     match message_body["event"]:
         case Event.EVENT_PROVIDER_INFO:
@@ -51,6 +51,10 @@ async def celery_beat_handler(message):
                 })
             )
 
+        # case Event.VPN_ACTIVE_SESSION:
+        #     pass
 
-async def logs_handler(message):
-    logger.info(f"📝 [logs] {message.body.decode()}")
+
+
+# async def logs_handler(message):
+#     logger.info(f"📝 [logs] {message.body.decode()}")
