@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     DATABASE_HOST: str = os.getenv("DATABASE_USER", "localhost")
     DATABASE_PORT: int = int(os.getenv("DATABASE_PORT", 5432))
     # JWT
-    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "1234567890")
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "IOH7aLvm5j4EbKvsSjmx3v3PaY1yKss")
     JWT_ALGORITHM: str = os.getenv("JWT_ALGORITHM", "HS256")
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("JWT_ACCESS_TOKEN_EXPIRE_MINUTES", 10))
     JWT_REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("JWT_REFRESH_TOKEN_EXPIRE_DAYS", 7))
@@ -36,6 +36,9 @@ class Settings(BaseSettings):
     # Zabbix
     ZABBIX_HOST: str = os.getenv("ZABBIX_HOST", "localhost")
     ZABBIX_AUTH_TOKEN: str = os.getenv("ZABBIX_AUTH_TOKEN", "zabbix_token")
+
+    # VPN
+    DEFAULT_VPN_DOMAIN: str = os.getenv("DEFAULT_VPN_DOMAIN", "center-inform.ru")
 
     # App
     HOST: str = "0.0.0.0"

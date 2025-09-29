@@ -10,6 +10,7 @@ from pydantic import ValidationError
 
 from api.ws.schemas import ClientMessage, Event
 from api.ws.manager import manager
+from services.vpn_service import get_active_vpn_users_by_host
 from utils.security import decode_token
 from db.database import AsyncSessionLocal
 from services import pacs_service, employee_service, avaya_service
@@ -38,6 +39,13 @@ async def websocket_auth_handler(websocket: WebSocket):
                     logger.debug(f"WebSocket ({username}): получил сообщение {message.event}")
 
                     match message.event:
+                        case Event.GET_DASHBOARD_EVENT:
+                            vpn_value = await get_active_vpn_users_by_host(db)
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_vpn_active_session_count",
+                                "data": {"results": vpn_value, "total": len(vpn_value)}
+                            }), websocket)
+
                         case Event.GET_PACS_INIT_VALUE:
                             res = await pacs_service.get_pacs_events_data(db)
                             await manager.send_personal_message(json.dumps({

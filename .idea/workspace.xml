@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add celery vpn task">
-      <change afterPath="$PROJECT_DIR$/db/models/avaya.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/avaya_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/listener_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/vpn.py" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="delete celery vpn task&#10;add listener service&#10;add avaya service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/ws/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/handlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/ws/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/celery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/models/employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/vpn_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/vpn_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/vpn_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/vpn_task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/zabbix_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/zabbix_task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,8 +128,8 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16480134" />
-      <window_info id="Commit" order="1" weight="0.14913262" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16495112" />
+      <window_info id="Commit" order="1" weight="0.16495112" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -167,7 +152,7 @@
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
       <window_info anchor="right" id="Notifications" order="0" weight="0.3298825" />
       <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.29552716" />
-      <window_info anchor="right" id="Database" order="2" weight="0.3298825" />
+      <window_info anchor="right" id="Database" order="2" weight="0.32964486" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Plots" order="5" weight="0.1" />
@@ -408,7 +393,7 @@
       <workItem from="1756977945465" duration="14283000" />
       <workItem from="1757001393663" duration="57071000" />
       <workItem from="1757401926710" duration="144861000" />
-      <workItem from="1758269890645" duration="14886000" />
+      <workItem from="1758269890645" duration="25758000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -674,7 +659,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758046887906</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="delete celery vpn task&#10;add listener service&#10;add avaya service">
+      <option name="closed" value="true" />
+      <created>1758811685419</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1758811685419</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +706,8 @@
     <MESSAGE value="add celery zabbix task send provider info" />
     <MESSAGE value="add celery zabbix task send hardware info" />
     <MESSAGE value="add celery vpn task" />
-    <option name="LAST_COMMIT_MESSAGE" value="add celery vpn task" />
+    <MESSAGE value="delete celery vpn task&#10;add listener service&#10;add avaya service" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete celery vpn task&#10;add listener service&#10;add avaya service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -737,6 +731,6 @@
     <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1730320117089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services/pacs-tcp-client" />
     <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
-    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1758281879699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1758880810769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

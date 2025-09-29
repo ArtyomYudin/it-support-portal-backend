@@ -8,9 +8,12 @@ import asyncpg
 from sqlalchemy import text, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+import core.settings
 from core.logging_config import logger
+from db.models.employee import Employee
 from db.models.vpn import CiscoVPNEvent
 from utils.vpn import parse_event
+from core.settings import settings
 
 
 async def create_pg_trigger_function(db: AsyncSession):
@@ -82,7 +85,7 @@ async def get_active_vpn_users_by_host(db: AsyncSession) -> Dict[str, List[Dict[
     events = result.scalars().all()
 
     # Словари для отслеживания последнего входа и выхода по internal_ip
-    last_login = {}   # internal_ip → {username, login_time, host, internal_ip}
+    last_login = {}   # internal_ip → {username_upn, login_time, host, internal_ip}
     last_logout = {}  # internal_ip → logout_time
 
     for event in events:
@@ -105,6 +108,23 @@ async def get_active_vpn_users_by_host(db: AsyncSession) -> Dict[str, List[Dict[
         elif event_type == "logout":
             last_logout[internal_ip] = event_time
 
+    # Собираем уникальные UPN для запроса в Employee
+    upns_from_logs = {login_info["username"] for login_info in last_login.values()}
+    full_upns = {upn + "@" + settings.DEFAULT_VPN_DOMAIN for upn in upns_from_logs}
+
+    display_names_map: Dict[str, str] = {}
+
+    if full_upns:
+        emp_stmt = select(Employee.user_principal_name, Employee.display_name).where(
+            Employee.user_principal_name.in_(full_upns)
+        )
+        emp_result = await db.execute(emp_stmt)
+        # Создаём маппинг от полного UPN к display_name
+        display_names_map = {
+            row.user_principal_name: row.display_name
+            for row in emp_result.fetchall()
+        }
+
     # Группируем активных пользователей по хосту
     grouped_users: Dict[str, List[Dict]] = {}
 
@@ -116,11 +136,16 @@ async def get_active_vpn_users_by_host(db: AsyncSession) -> Dict[str, List[Dict[
 
         if logout_time is None or logout_time < login_info["login_time"]:
             host = login_info["host"]
+            short_upn = login_info["username"]
+            full_upn = short_upn + "@" + settings.DEFAULT_VPN_DOMAIN
+
+            display_name = display_names_map.get(full_upn, short_upn)  # fallback на короткое имя
+
             if host not in grouped_users:
                 grouped_users[host] = []
 
             user_entry = {
-                "username": login_info["username"],
+                "username": display_name,
                 "internal_ip": internal_ip,
                 "login_time": login_info["login_time"].isoformat(),
                 "duration_seconds": int((datetime.now(timezone.utc) - login_info["login_time"]).total_seconds()),
