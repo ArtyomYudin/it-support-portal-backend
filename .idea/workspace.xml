@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add docker">
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="change backend port">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +127,7 @@
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16484465" />
-      <window_info id="Commit" order="1" weight="0.16495112" />
+      <window_info id="Commit" order="1" weight="0.16484465" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -392,7 +392,7 @@
       <workItem from="1757001393663" duration="57071000" />
       <workItem from="1757401926710" duration="144861000" />
       <workItem from="1758269890645" duration="29291000" />
-      <workItem from="1759210621709" duration="1021000" />
+      <workItem from="1759210621709" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -682,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759152785537</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="change backend port">
+      <option name="closed" value="true" />
+      <created>1759211787662</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1759211787662</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -724,7 +732,8 @@
     <MESSAGE value="delete celery vpn task&#10;add listener service&#10;add avaya service" />
     <MESSAGE value="add user name in vpn dashboard" />
     <MESSAGE value="add docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="add docker" />
+    <MESSAGE value="change backend port" />
+    <option name="LAST_COMMIT_MESSAGE" value="change backend port" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
