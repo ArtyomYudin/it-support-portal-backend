@@ -42,7 +42,7 @@ class Settings(BaseSettings):
 
     # App
     HOST: str = "0.0.0.0"
-    PORT: int = 8000
+    PORT: int = 8888
 
     class Config:
         env_file = ".env"
