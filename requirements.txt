@@ -14,3 +14,4 @@ alembic
 python-multipart
 celery
 aiohttp
+imapclient

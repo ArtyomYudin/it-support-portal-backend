@@ -9,6 +9,7 @@ from kombu import Queue
 from core.settings import settings
 # ЯВНО ИМПОРТИРУЕМ МОДУЛЬ С ЗАДАЧАМИ — ЭТО КЛЮЧЕВОЕ!
 import tasks.zabbix_task
+import tasks.imap_task
 
 app = Celery('core')
 
@@ -49,14 +50,19 @@ app.autodiscover_tasks(["tasks"])
 
 # Планировщик
 app.conf.beat_schedule = {
-    'fetch-provider-info-every-5-minutes': {
-        'task': 'tasks.zabbix_task.fetch_provider_info_task',  # Укажите правильный путь!
-        'schedule': crontab(minute='*/1'),  # Каждые 1 минут
-        'kwargs': {'token': None},   # Передаём token=None, если нужно — замените на актуальный токен
+    "fetch-provider-info-every-1-minutes": {
+        "task": "tasks.zabbix_task.fetch_provider_info_task",  # Укажите правильный путь!
+        "schedule": crontab(minute="*/1"),  # Каждые 1 минут
+        "kwargs": {"token": None},   # Передаём token=None, если нужно — замените на актуальный токен
     },
-    'fetch-hardware-problem-info-every-5-minutes': {
-        'task': 'tasks.zabbix_task.fetch_hardware_group_problem_task',  # Укажите правильный путь!
-        'schedule': crontab(minute='*/1'),  # Каждые 1 минут
-        'kwargs': {'token': None},   # Передаём token=None, если нужно — замените на актуальный токен
+    "fetch-hardware-problem-info-every-1-minutes": {
+        "task": "tasks.zabbix_task.fetch_hardware_group_problem_task",  # Укажите правильный путь!
+        "schedule": crontab(minute="*/1"),  # Каждые 1 минут
+        "kwargs": {"token": None},   # Передаём token=None, если нужно — замените на актуальный токен
+    },
+    "check-email-every-1-minutes": {
+        "task": "tasks.imap_task.check_email",
+        "schedule": crontab(minute="*/1"),
+        # "kwargs": {"token": None},
     },
 }
