@@ -8,7 +8,7 @@ load_dotenv()
 
 
 class Settings(BaseSettings):
-    DEBUG_MODE: bool = bool(os.getenv("DEBUG_MODE", False).lower())
+    DEBUG_MODE: bool = bool(os.getenv("DEBUG_MODE", "False").lower())
 
     # Database
     DATABASE_NAME: str = os.getenv("DATABASE_NAME", "postgres")
@@ -39,6 +39,14 @@ class Settings(BaseSettings):
 
     # VPN
     DEFAULT_VPN_DOMAIN: str = os.getenv("DEFAULT_VPN_DOMAIN", "center-inform.ru")
+    MAX_SESSION_HOURS: int = os.getenv("MAX_SESSION_HOURS", 24)
+
+    #IMAP
+    IMAP_HOST: str = os.getenv("IMAP_HOST", "outlook.center-inform.ru")
+    IMAP_PORT: int = int(os.getenv("IMAP_PORT", "993"))
+    IMAP_TLS : bool = bool(os.getenv("IMAP_TLS", "False").lower())
+    IMAP_USER: str = os.getenv("IMAP_USER", "itsupport@center-inform.ru")
+    IMAP_PASSWORD : str = os.getenv("IMAP_PASSWORD", "CixR55bjF341")
 
     # App
     HOST: str = "0.0.0.0"
