@@ -68,8 +68,6 @@ async def get_active_vpn_users_by_host(db: AsyncSession) -> Dict[str, List[Dict[
     """
 
     # Запрос: только события входа/выхода, отсортированные по времени
-
-    # MAX_SESSION_HOURS = 24
     # cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
     stmt = (
         select(CiscoVPNEvent)
@@ -129,9 +127,9 @@ async def get_active_vpn_users_by_host(db: AsyncSession) -> Dict[str, List[Dict[
     grouped_users: Dict[str, List[Dict]] = {}
 
     for internal_ip, login_info in last_login.items():
-        # login_time = login_info["login_time"]
-        # if (datetime.now(timezone.utc) - login_time).total_seconds() > MAX_SESSION_HOURS * 3600:
-        #     continue  # пропускаем "подозрительно долгие" сессии
+        login_time = login_info["login_time"]
+        if (datetime.now(timezone.utc) - login_time).total_seconds() > settings.MAX_SESSION_HOURS * 3600:
+            continue  # пропускаем "подозрительно долгие" сессии
         logout_time = last_logout.get(internal_ip)
 
         if logout_time is None or logout_time < login_info["login_time"]:
