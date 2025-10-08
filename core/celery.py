@@ -36,7 +36,7 @@ app.conf.update(
     accept_content=["json"],
     result_serializer="json",
     timezone="Europe/Moscow",
-    enable_utc=True,
+    enable_utc=False,
 
 
     worker_prefetch_multiplier = 1,  # брать по одной задаче — важно для долгих задач
@@ -55,14 +55,19 @@ app.conf.beat_schedule = {
         "schedule": crontab(minute="*/1"),  # Каждые 1 минут
         "kwargs": {"token": None},   # Передаём token=None, если нужно — замените на актуальный токен
     },
-    "fetch-hardware-problem-info-every-1-minutes": {
+    "fetch-hardware-problem-info-every-5-minutes": {
         "task": "tasks.zabbix_task.fetch_hardware_group_problem_task",  # Укажите правильный путь!
-        "schedule": crontab(minute="*/1"),  # Каждые 1 минут
+        "schedule": crontab(minute="*/5"),  # Каждые 1 минут
         "kwargs": {"token": None},   # Передаём token=None, если нужно — замените на актуальный токен
     },
     "check-email-every-1-minutes": {
         "task": "tasks.imap_task.check_email",
         "schedule": crontab(minute="*/1"),
         # "kwargs": {"token": None},
+    },
+    "fetch-avaya_e1_channel-every-1-minutes": {
+        "task": "tasks.zabbix_task.fetch_avaya_e1_channel_info_task",  # Укажите правильный путь!
+        "schedule": crontab(minute="*/1"),  # Каждые 1 минут
+        "kwargs": {"token": None},  # Передаём token=None, если нужно — замените на актуальный токен
     },
 }

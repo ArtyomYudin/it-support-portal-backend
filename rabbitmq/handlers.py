@@ -51,8 +51,13 @@ async def celery_beat_handler(message):
                 })
             )
 
-        # case Event.VPN_ACTIVE_SESSION:
-        #     pass
+        case Event.EVENT_AVAYA_E1_CHANNEL_INFO:
+            await manager.broadcast(json.dumps(
+                {
+                    "event": "event_avaya_e1_info",
+                    "data": message_body["data"]
+                })
+            )
 
 
 

@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add frontend host to CORS">
-      <change afterPath="$PROJECT_DIR$/db/models/user_request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/user_request_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/imap_task.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/imap_daemon.py" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add imap daemon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/ws/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/schemas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/celery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/vpn_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/vpn_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbitmq/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/avaya_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/avaya_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/zabbix_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/zabbix_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/zabbix_task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,7 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16495112" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17462601" />
       <window_info id="Commit" order="1" weight="0.16495112" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -144,13 +142,13 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.22987208" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.33023083" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.2351392" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.22987208" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23062453" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.33023083" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.32994732" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.2304542" />
-      <window_info anchor="bottom" id="Find" order="9" show_stripe_button="false" weight="0.33023083" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.33023083" />
       <window_info anchor="right" id="PR AI Assistant" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
@@ -399,7 +397,7 @@
       <workItem from="1757001393663" duration="57071000" />
       <workItem from="1757401926710" duration="144861000" />
       <workItem from="1758269890645" duration="29291000" />
-      <workItem from="1759210621709" duration="28673000" />
+      <workItem from="1759210621709" duration="44744000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -713,7 +711,39 @@
       <option name="project" value="LOCAL" />
       <updated>1759213000620</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fix vpn service">
+      <option name="closed" value="true" />
+      <created>1759415282893</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1759415282893</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add IMAP settings">
+      <option name="closed" value="true" />
+      <created>1759415306822</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1759415306822</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add user request model and service">
+      <option name="closed" value="true" />
+      <created>1759415368817</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1759415368817</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add imap daemon">
+      <option name="closed" value="true" />
+      <created>1759415402928</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1759415402928</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,10 +761,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add pip requirements.txt" />
-    <MESSAGE value="daily work: add pacs tcp client" />
-    <MESSAGE value="daily work: jwt" />
-    <MESSAGE value="devcontainer" />
     <MESSAGE value="devcontainer fix" />
     <MESSAGE value="docker compose .env" />
     <MESSAGE value="dev container" />
@@ -756,7 +782,11 @@
     <MESSAGE value="add docker" />
     <MESSAGE value="change backend port" />
     <MESSAGE value="add frontend host to CORS" />
-    <option name="LAST_COMMIT_MESSAGE" value="add frontend host to CORS" />
+    <MESSAGE value="fix vpn service" />
+    <MESSAGE value="add IMAP settings" />
+    <MESSAGE value="add user request model and service" />
+    <MESSAGE value="add imap daemon" />
+    <option name="LAST_COMMIT_MESSAGE" value="add imap daemon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -780,6 +810,6 @@
     <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1730320117089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services/pacs-tcp-client" />
     <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
-    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1759316533019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1759855338063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

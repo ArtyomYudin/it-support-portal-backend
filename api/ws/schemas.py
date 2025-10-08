@@ -24,6 +24,7 @@ class Event(str, Enum):
     EVENT_PROVIDER_INFO = "event_provider_info"
     EVENT_HARDWARE_GROUP_ALARM = "event_hardware_group_alarm"
     EVENT_CISCO_VPN_ACTIVE_SESSION = "event_cisco_vpn_active_session"
+    EVENT_AVAYA_E1_CHANNEL_INFO = "event_avaya_e1_channel_info"
 
     # getFilteredRequestInitiator
     # добавьте другие события при необходимости
