@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add imap daemon">
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add avaya e1 channel task&#10;fix zabbix tasks">
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/ws/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/ws/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/celery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/handlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/avaya_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/avaya_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/zabbix_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/zabbix_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/zabbix_task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,8 +126,8 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17462601" />
-      <window_info id="Commit" order="1" weight="0.16495112" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15103567" />
+      <window_info active="true" id="Commit" order="1" visible="true" weight="0.15103567" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -142,20 +137,21 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.22987208" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.2351392" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.22987208" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23492181" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.23492181" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23062453" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.32994732" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.2304542" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.33023083" />
+      <window_info anchor="bottom" id="SQL Generator" order="10" weight="0.23492181" />
       <window_info anchor="right" id="PR AI Assistant" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
-      <window_info anchor="right" id="Notifications" order="0" weight="0.3298825" />
+      <window_info anchor="right" id="Notifications" order="0" weight="0.14951107" />
       <window_info anchor="right" id="AIAssistant" order="1" show_stripe_button="false" weight="0.29552716" />
-      <window_info anchor="right" id="Database" order="2" weight="0.33015954" />
+      <window_info anchor="right" id="Database" order="2" weight="0.32997698" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Plots" order="5" weight="0.1" />
@@ -312,8 +308,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-PY-252.26199.168" />
-        <option value="bundled-python-sdk-b3d66beaba9a-c6efb3732140-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26199.168" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.26830.99" />
+        <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
       </set>
     </attachedChunks>
   </component>
@@ -397,7 +393,9 @@
       <workItem from="1757001393663" duration="57071000" />
       <workItem from="1757401926710" duration="144861000" />
       <workItem from="1758269890645" duration="29291000" />
-      <workItem from="1759210621709" duration="44744000" />
+      <workItem from="1759210621709" duration="54231000" />
+      <workItem from="1760123157664" duration="5583000" />
+      <workItem from="1761142085733" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -743,7 +741,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759415402928</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="add avaya e1 channel task&#10;fix zabbix tasks">
+      <option name="closed" value="true" />
+      <created>1759927217005</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1759927217005</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -761,7 +767,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="devcontainer fix" />
     <MESSAGE value="docker compose .env" />
     <MESSAGE value="dev container" />
     <MESSAGE value="fix up" />
@@ -786,7 +791,8 @@
     <MESSAGE value="add IMAP settings" />
     <MESSAGE value="add user request model and service" />
     <MESSAGE value="add imap daemon" />
-    <option name="LAST_COMMIT_MESSAGE" value="add imap daemon" />
+    <MESSAGE value="add avaya e1 channel task&#10;fix zabbix tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="add avaya e1 channel task&#10;fix zabbix tasks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,6 +816,6 @@
     <SUITE FILE_PATH="coverage/backend$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729502412254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1730320117089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services/pacs-tcp-client" />
     <SUITE FILE_PATH="coverage/backend$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1729762614859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/pacs" />
-    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1759855338063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/it_support_backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1761033541713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
