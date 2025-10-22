@@ -1,25 +1,61 @@
-rabbitmqctl add_vhost it_support --description "IT Support Portal" --default-queue-type quorum
+# 🧰 IT Support Portal — Backend
 
-rabbitmqctl add_user pacs_tcp_client "97OUWipH4txB"
-rabbitmqctl add_user backend "kMe22aRIN5wi"
-rabbitmqctl add_user celery "3bC2Kv4UDrtN"
+**IT Support Portal Backend** — это серверная часть системы для автоматизации и управления процессами IT-поддержки.  
+Приложение реализовано на **FastAPI** с использованием **PostgreSQL**, **Celery**, **RabbitMQ** и **Docker**.
 
+---
 
-# First ".*" for configure permission on every entity
-# Second ".*" for write permission on every entity
-# Third ".*" for read permission on every entity
+## 🚀 Основные возможности
 
-rabbitmqctl set_permissions -p it_support pacs_tcp_client "pacs.*" "pacs.*" ""
-rabbitmqctl set_permissions -p it_support backend ".*" ".*" ".*"
-rabbitmqctl set_permissions -p it_support celery ".*" ".*" ".*"
+- 👥 Управление пользователями и аутентификация (JWT)
+- 🎫 Работа с тикетами и обращениями
+- ⚙️ Асинхронные задачи и интеграции через Celery
+- 💾 Хранение данных в PostgreSQL
+- 📨 Интеграции с почтой (IMAP)
+- 🔄 Миграции базы данных с помощью Alembic
+- 🐳 Полная контейнеризация через Docker Compose
+- 📦 Гибкая конфигурация через `.env`
 
-rabbitmqctl list_permissions -p it_support
+---
 
+## 🧱 Архитектура проекта
+```
+├── api/                 # Маршруты и контроллеры API (FastAPI)
+├── core/                # Основные настройки приложения
+├── db/                  # Подключение к БД, модели и репозитории
+├── services/            # Бизнес-логика
+├── tasks/               # Фоновые задачи Celery
+├── utils/               # Вспомогательные функции
+├── alembic/             # Миграции базы данных
+├── docker/              # Конфигурация Docker и сервисов
+├── rabbitmq/            # Настройки брокера сообщений
+├── main.py              # Точка входа API
+├── worker.py            # Celery worker
+├── requirements.txt     # Зависимости Python
+└── .env                 # Переменные окружения
+```
 
+---
 
+## ⚙️ Технологический стек
 
-# Запуск воркера
-celery -A core.celery worker --loglevel=info
+| Компонент | Используемая технология |
+|------------|-------------------------|
+| Backend Framework | **FastAPI** |
+| Database | **PostgreSQL** |
+| ORM | **SQLAlchemy (async)** |
+| Migrations | **Alembic** |
+| Task Queue | **Celery** |
+| Message Broker | **RabbitMQ** |
+| Auth | **JWT (python-jose, passlib)** |
+| Config | **dotenv, pydantic-settings** |
+| Containerization | **Docker & Docker Compose** |
 
-# Запуск планировщика
-celery -A core.celery beat --loglevel=info
+---
+
+## 🧩 Установка и запуск
+
+### 1. Клонирование репозитория
+```bash
+git clone https://github.com/ArtyomYudin/it-support-portal-backend.git
+cd it-support-portal-backend
