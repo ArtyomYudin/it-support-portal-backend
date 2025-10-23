@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+    <list default="true" id="f91b8ff3-c3c4-42f5-aa3b-de6172ae5714" name="Changes" comment="add README &amp; LICENSE">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/docker-publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +28,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ArtyomYudin"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ArtyomYudin&quot;
   }
-}]]></component>
+}</component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPENED&quot;,
@@ -51,12 +50,12 @@
     &quot;second&quot;: &quot;2dee5672-918c-45dc-8c87-acdbb9c671bf&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ArtyomYudin/it-support-portal-backend.git",
-    "accountId": "a60c0342-57f8-421b-a46d-f6e78ebb1859"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ArtyomYudin/it-support-portal-backend.git&quot;,
+    &quot;accountId&quot;: &quot;a60c0342-57f8-421b-a46d-f6e78ebb1859&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -139,8 +138,8 @@
       <window_info id="Django.Structure" show_stripe_button="false" side_tool="true" />
       <window_info id="Settings Sync History" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17347527" />
-      <window_info id="Commit" order="1" weight="0.17347527" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17366317" />
+      <window_info id="Commit" order="1" weight="0.17366317" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
@@ -150,7 +149,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.22987208" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32994732" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.33023083" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.23492181" />
       <window_info anchor="bottom" id="Python Packages" order="5" weight="0.23062453" />
       <window_info anchor="bottom" id="Python Console" order="6" weight="0.23015267" />
@@ -408,7 +407,8 @@
       <workItem from="1758269890645" duration="29291000" />
       <workItem from="1759210621709" duration="54231000" />
       <workItem from="1760123157664" duration="5583000" />
-      <workItem from="1761142085733" duration="2543000" />
+      <workItem from="1761142085733" duration="3349000" />
+      <workItem from="1761212762970" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -770,7 +770,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761148771764</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add README &amp; LICENSE">
+      <option name="closed" value="true" />
+      <created>1761150119323</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1761150119323</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -788,7 +796,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dev container" />
     <MESSAGE value="fix up" />
     <MESSAGE value="add channels" />
     <MESSAGE value="pacs channel consumers" />
@@ -813,7 +820,8 @@
     <MESSAGE value="add imap daemon" />
     <MESSAGE value="add avaya e1 channel task&#10;fix zabbix tasks" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="add README &amp; LICENSE" />
+    <option name="LAST_COMMIT_MESSAGE" value="add README &amp; LICENSE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
