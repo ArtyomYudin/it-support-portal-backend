@@ -4,7 +4,6 @@ from api.ws.schemas import Event
 from db.database import AsyncSessionLocal
 from services.pacs_service import get_pacs_events_by_id, get_pacs_last_event
 from api.ws.manager import manager
-# === Обработчики сообщений ===
 from core.logging_config import logger
 
 # async def events_handler(message):
@@ -54,7 +53,7 @@ async def celery_beat_handler(message):
         case Event.EVENT_AVAYA_E1_CHANNEL_INFO:
             await manager.broadcast(json.dumps(
                 {
-                    "event": "event_avaya_e1_info",
+                    "event": "event_avaya_e1_channel_info",
                     "data": message_body["data"]
                 })
             )

@@ -33,6 +33,12 @@ class Settings(BaseSettings):
     RMQ_PACS_EXCHANGE_NAME: str = os.getenv("RMQ_PACS_EXCHANGE_NAME", "quest")
     RMQ_CELERY_BEAT_EXCHANGE_NAME: str = os.getenv("RMQ_CELERY_BEAT_EXCHANGE_NAME", "celery_beat")
 
+    # Redis
+    REDIS_HOST: str = os.getenv("REDIS_HOST", "redis")
+    REDIS_PORT: int = int(os.getenv("REDIS_PORT", 6379))
+    REDIS_DB: int = int(os.getenv("REDIS_DB", 0))
+    REDIS_PASSWORD: str = os.getenv("REDIS_PASSWORD", "redis")
+
     # Zabbix
     ZABBIX_HOST: str = os.getenv("ZABBIX_HOST", "localhost")
     ZABBIX_AUTH_TOKEN: str = os.getenv("ZABBIX_AUTH_TOKEN", "zabbix_token")

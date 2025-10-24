@@ -7,15 +7,20 @@ import logging
 from annotated_types.test_cases import cases
 from fastapi import WebSocket
 from pydantic import ValidationError
+from redis.asyncio import Redis
 
 from api.ws.schemas import ClientMessage, Event
 from api.ws.manager import manager
+from core.settings import settings
 from services.vpn_service import get_active_vpn_users_by_host
 from utils.security import decode_token
 from db.database import AsyncSessionLocal
 from services import pacs_service, employee_service, avaya_service
 
 logger = logging.getLogger("app.ws")  # Подлоггер для WebSocket
+
+REDIS_URL = f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}/{settings.REDIS_DB}"
+
 
 async def websocket_auth_handler(websocket: WebSocket):
     token = websocket.query_params.get("token")
@@ -45,6 +50,20 @@ async def websocket_auth_handler(websocket: WebSocket):
                                 "event": "event_vpn_active_session_count",
                                 "data": {"results": vpn_value, "total": len(vpn_value)}
                             }), websocket)
+
+                            # Берем последние значения с Redis.
+                            async with Redis.from_url(REDIS_URL, decode_responses=True) as redis:
+                                provider_info = await redis.get("latest:event_provider_info")
+                                await manager.send_personal_message(provider_info, websocket)
+
+                                avaya_e1_channel_info = await redis.get("latest:event_avaya_e1_channel_info")
+                                logger.debug("!!!!!!!!!!!!!!!!")
+                                logger.debug(avaya_e1_channel_info)
+                                logger.debug("!!!!!!!!!!!!!!!!")
+                                await manager.send_personal_message(avaya_e1_channel_info, websocket)
+
+                                hardware_group_info = await redis.get("latest:event_hardware_group_alarm")
+                                await manager.send_personal_message(hardware_group_info, websocket)
 
                         case Event.GET_PACS_INIT_VALUE:
                             res = await pacs_service.get_pacs_events_data(db)

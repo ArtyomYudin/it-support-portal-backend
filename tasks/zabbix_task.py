@@ -4,6 +4,7 @@ import aio_pika
 import aiohttp
 from celery import shared_task
 from typing import List, Dict, Any, Optional, Union
+from redis.asyncio import Redis
 
 from core.settings import settings
 from core.logging_config import logger
@@ -14,6 +15,7 @@ RABBITMQ_URL = (
     f"@{settings.RMQ_HOST}:{settings.RMQ_PORT}/{settings.RMQ_VIRTUAL_HOST}"
 )
 
+REDIS_URL = f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}/{settings.REDIS_DB}"
 
 def safe_float(value: str, default: float = 0.0) -> float:
     """Безопасно преобразует строку в float, обрабатывая ошибки и научную нотацию."""
@@ -160,6 +162,9 @@ async def publish_provider_info(token: str) -> None:
     }
     await publish_to_exchange(payload, RABBITMQ_URL)
 
+    async with Redis.from_url(REDIS_URL, decode_responses=True) as redis:
+        await redis.set("latest:event_provider_info", json.dumps(payload))
+
 
 async def fetch_problems_for_group(session: aiohttp.ClientSession, group: Dict[str, str]) -> Dict[str, Any]:
     """Получает проблемы для одной группы оборудования."""
@@ -216,6 +221,9 @@ async def publish_hardware_group_problem(token: str) -> None:
     }
     await publish_to_exchange(payload, RABBITMQ_URL)
 
+    async with Redis.from_url(REDIS_URL, decode_responses=True) as redis:
+        await redis.set("latest:event_hardware_group_alarm", json.dumps(payload))
+
 
 async def get_avaya_e1_channel_info(token: str = None, retry_count: int = 0) -> Union[Dict[str, int], bool]:
     """Получает информацию о каналах E1 на Avaya."""
@@ -265,6 +273,9 @@ async def publish_avaya_e1_channel_info(token: str) -> None:
         },
     }
     await publish_to_exchange(payload, RABBITMQ_URL)
+
+    async with Redis.from_url(REDIS_URL, decode_responses=True) as redis:
+        await redis.set("latest:event_avaya_e1_channel_info", json.dumps(payload))
 
 
 # === Celery Tasks ===
