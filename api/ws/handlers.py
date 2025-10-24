@@ -57,9 +57,6 @@ async def websocket_auth_handler(websocket: WebSocket):
                                 await manager.send_personal_message(provider_info, websocket)
 
                                 avaya_e1_channel_info = await redis.get("latest:event_avaya_e1_channel_info")
-                                logger.debug("!!!!!!!!!!!!!!!!")
-                                logger.debug(avaya_e1_channel_info)
-                                logger.debug("!!!!!!!!!!!!!!!!")
                                 await manager.send_personal_message(avaya_e1_channel_info, websocket)
 
                                 hardware_group_info = await redis.get("latest:event_hardware_group_alarm")
