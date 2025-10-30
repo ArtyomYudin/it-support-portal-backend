@@ -23,7 +23,7 @@ class DhcpScope(Base):
     state: Mapped[str] = mapped_column(String(20))  # Active, Inactive и т.д.
 
     # Отношения
-    statistics: Mapped[list["DhcpScopeStatistic"]] = relationship(back_populates="scope", cascade="all, delete-orphan")
+    statistics: Mapped[list["DhcpScopeStatistics"]] = relationship(back_populates="scope", cascade="all, delete-orphan")
     leases: Mapped[list["DhcpLease"]] = relationship(back_populates="scope", cascade="all, delete-orphan")
 
     __table_args__ = (Index("uq_dhcp_scope_server_scope", "server_address", "scope_id", unique=True),)
@@ -40,11 +40,11 @@ class DhcpLease(Base):
     collected_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
 
     ip_address: Mapped[str] = mapped_column(String(39))  # IPv4/IPv6
-    client_id: Mapped[Optional[str]] = mapped_column(String(255))
+    client_id: Mapped[Optional[str]] = mapped_column(String(255)) # MAC
     host_name: Mapped[Optional[str]] = mapped_column(String(255))
     lease_expiration_time: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True))
     address_state: Mapped[str] = mapped_column(String(20))  # Active, Offered, etc.
-    mac_address: Mapped[Optional[str]] = mapped_column(String(17))
+    mac_address: Mapped[Optional[str]] = mapped_column(String(17)) # MAC
 
     # Отношение
     scope: Mapped["DhcpScope"] = relationship(back_populates="leases")
@@ -56,8 +56,8 @@ class DhcpLease(Base):
     )
 
 
-class DhcpScopeStatistic(Base):
-    __tablename__ = "dhcp_scope_statistic"
+class DhcpScopeStatistics(Base):
+    __tablename__ = "dhcp_scope_statistics"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     dhcp_scope_id: Mapped[int] = mapped_column(ForeignKey("dhcp_scope.id", ondelete="CASCADE"))
@@ -73,5 +73,5 @@ class DhcpScopeStatistic(Base):
     scope: Mapped["DhcpScope"] = relationship(back_populates="statistics")
 
     __table_args__ = (
-        Index("ix_dhcp_stat_scope_collected", "dhcp_scope_id", "collected_at"),
+        Index("ix_dhcp_scope_statistics_collected", "dhcp_scope_id", "collected_at"),
     )
