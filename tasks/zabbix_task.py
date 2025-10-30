@@ -8,6 +8,7 @@ from redis.asyncio import Redis
 
 from core.settings import settings
 from core.logging_config import logger
+from rabbitmq.schemas import Event
 from utils.celery import publish_to_exchange
 
 RABBITMQ_URL = (
@@ -157,7 +158,7 @@ async def publish_provider_info(token: str) -> None:
     }
 
     payload = {
-        "event": "event_provider_info",
+        "event": Event.EVENT_PROVIDER_INFO,
         "data": {"results": provider_speed, "total": len(provider_speed)},
     }
     await publish_to_exchange(payload, RABBITMQ_URL)
@@ -216,7 +217,7 @@ async def get_hardware_group_problem(token: str = None, retry_count: int = 0) ->
 async def publish_hardware_group_problem(token: str) -> None:
     hardware_problem = await get_hardware_group_problem(token=token)
     payload = {
-        "event": "event_hardware_group_alarm",
+        "event": Event.EVENT_HARDWARE_GROUP_ALARM,
         "data": {"results": hardware_problem, "total": len(hardware_problem)},
     }
     await publish_to_exchange(payload, RABBITMQ_URL)
@@ -266,7 +267,7 @@ async def publish_avaya_e1_channel_info(token: str) -> None:
         return
 
     payload = {
-        "event": "event_avaya_e1_channel_info",
+        "event": Event.EVENT_AVAYA_E1_CHANNEL_INFO,
         "data": {
             "activeChannel": e1_info["active"],
             "allChannel": e1_info["total"]
