@@ -8,7 +8,8 @@ ENV TZ="Europe/Moscow" \
 SHELL ["/bin/bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-c"]
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install openssh-client net-tools -y && \
+    apt-get install -y openssh-client net-tools \
+      krb5-user libkrb5-dev &&\
     apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # set timezone
@@ -20,6 +21,13 @@ RUN echo "export PATH=/opt/bitnami/python/bin:${PATH}" >> /root/.bashrc
 # Upgrade pip
 RUN pip install --upgrade pip
 
+# Копируем конфигурацию krb5.conf
+COPY docker/krb5.conf /etc/krb5.conf
+
+# Копируем entrypoint
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # Установка зависимостей для Python
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -28,6 +36,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 EXPOSE 8888
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Запуск по умолчанию (FastAPI)
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8888"]

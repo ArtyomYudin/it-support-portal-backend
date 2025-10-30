@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings
-from typing import Optional
+from typing import Optional, List
 
 import os
 from dotenv import load_dotenv
@@ -53,6 +53,18 @@ class Settings(BaseSettings):
     IMAP_TLS : bool = bool(os.getenv("IMAP_TLS", "False").lower())
     IMAP_USER: str = os.getenv("IMAP_USER", "itsupport@center-inform.ru")
     IMAP_PASSWORD : str = os.getenv("IMAP_PASSWORD", "CixR55bjF341")
+
+    # DHCP
+    DHCP_SERVERS: List[str] = [
+        s.strip() for s in os.getenv("DHCP_SERVERS", "janet.center-inform.ru").split(",")
+    ]
+    DHCP_USER: str = os.getenv("DHCP_USER", "center-inform\\itsupport")  # обязательно экранирование
+    DHCP_PASSWORD : str = os.getenv("DHCP_PASSWORD", "CixR55bjF341")
+
+    # Windows AD kerberos
+    KERBEROS_USER:str = os.getenv("KERBEROS_USER", "itsupport@CENTER-INFORM.RU")
+    KERBEROS_PASSWORD: str = os.getenv("KERBEROS_PASSWORD", "CixR55bjF341")
+
 
     # App
     HOST: str = "0.0.0.0"

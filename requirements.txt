@@ -16,3 +16,4 @@ celery
 aiohttp
 imapclient
 redis
+pywinrm[kerberos]
