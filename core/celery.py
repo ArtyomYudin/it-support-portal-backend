@@ -10,6 +10,7 @@ from core.settings import settings
 # ЯВНО ИМПОРТИРУЕМ МОДУЛЬ С ЗАДАЧАМИ — ЭТО КЛЮЧЕВОЕ!
 import tasks.zabbix_task
 import tasks.imap_task
+import tasks.dhcp_task
 
 app = Celery('core')
 
@@ -65,9 +66,24 @@ app.conf.beat_schedule = {
         "schedule": crontab(minute="*/1"),
         # "kwargs": {"token": None},
     },
-    "fetch-avaya_e1_channel-every-1-minutes": {
+    "fetch-avaya_e1_channel-info-every-1-minutes": {
         "task": "tasks.zabbix_task.fetch_avaya_e1_channel_info_task",  # Укажите правильный путь!
         "schedule": crontab(minute="*/1"),  # Каждые 1 минут
         "kwargs": {"token": None},  # Передаём token=None, если нужно — замените на актуальный токен
+    },
+    "fetch-dhcp-scope-every-30-minutes": {
+        "task": "tasks.dhcp_task.fetch_dhcp_scope_task",  # Укажите правильный путь!
+        "schedule": crontab(minute="*/30"),  # Каждые 30 минут
+        # "kwargs": {"token": None},  # Передаём token=None, если нужно — замените на актуальный токен
+    },
+    "fetch-dhcp-scope-statistic-every-10-minutes": {
+        "task": "tasks.dhcp_task.fetch_dhcp_scope_statistic_task",  # Укажите правильный путь!
+        "schedule": crontab(minute="*/10"),  # Каждые 10 минут
+        # "kwargs": {"token": None},  # Передаём token=None, если нужно — замените на актуальный токен
+    },
+    "fetch-dhcp-scope-lease-every-10-minutes": {
+        "task": "tasks.dhcp_task.fetch_dhcp_scope_lease_task",  # Укажите правильный путь!
+        "schedule": crontab(minute="*/10"),  # Каждые 10 минут
+        # "kwargs": {"token": None},  # Передаём token=None, если нужно — замените на актуальный токен
     },
 }
