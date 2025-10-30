@@ -15,7 +15,7 @@ from core.settings import settings
 from services.vpn_service import get_active_vpn_users_by_host
 from utils.security import decode_token
 from db.database import AsyncSessionLocal
-from services import pacs_service, employee_service, avaya_service
+from services import pacs_service, employee_service, avaya_service, dhcp_service
 
 logger = logging.getLogger("app.ws")  # Подлоггер для WebSocket
 
@@ -68,8 +68,8 @@ async def websocket_auth_handler(websocket: WebSocket):
                                 "event": "event_pacs_entry_exit",
                                 "data": {"results": res, "total": len(res)}
                             }), websocket)
-                            res_last = await pacs_service.get_pacs_last_event(db)
 
+                            res_last = await pacs_service.get_pacs_last_event(db)
                             await manager.send_personal_message(json.dumps({
                                 "event": "event_pacs_last_event",
                                 "data": {"results": res_last, "total": len(res_last)}
@@ -103,6 +103,22 @@ async def websocket_auth_handler(websocket: WebSocket):
                             await manager.send_personal_message(json.dumps({
                                 "event": "event_avaya_cdr",
                                 "data": {"results": avaya_cdr, "total": len(avaya_cdr)}
+                            }), websocket)
+
+                        case Event.GET_DHCP_LEASE:
+                            dhcp_leases = await dhcp_service.get_dhcp_scope_lease(db)
+                            logger.debug(dhcp_leases)
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_dhcp_lease",
+                                "data": {"results": dhcp_leases, "total": len(dhcp_leases)}
+                            }), websocket)
+
+                        case Event.GET_DHCP_SCOPE_STATISTICS:
+                            dhcp_scopes_statistics = await dhcp_service.get_dhcp_scope_lease(db)
+                            logger.debug(dhcp_leases)
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_dhcp_statistics",
+                                "data": {"results": dhcp_scopes_statistics, "total": len(dhcp_scopes_statistics)}
                             }), websocket)
 
                     # if message.type == "ping":

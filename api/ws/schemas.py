@@ -20,11 +20,16 @@ class Event(str, Enum):
     # Avaya
     GET_AVAYA_CDR = "getAvayaCDR"
 
-    # Celery Worker & Beat
-    EVENT_PROVIDER_INFO = "event_provider_info"
-    EVENT_HARDWARE_GROUP_ALARM = "event_hardware_group_alarm"
-    EVENT_CISCO_VPN_ACTIVE_SESSION = "event_cisco_vpn_active_session"
-    EVENT_AVAYA_E1_CHANNEL_INFO = "event_avaya_e1_channel_info"
+    # DHCP
+    GET_DHCP_LEASE = "getDHCPLease"
+    GET_DHCP_SCOPE_STATISTICS = "getDHCPStatistics"
+
+    # # Celery Worker & Beat
+    # EVENT_PROVIDER_INFO = "event_provider_info"
+    # EVENT_HARDWARE_GROUP_ALARM = "event_hardware_group_alarm"
+    # EVENT_CISCO_VPN_ACTIVE_SESSION = "event_cisco_vpn_active_session"
+    # EVENT_AVAYA_E1_CHANNEL_INFO = "event_avaya_e1_channel_info"
+    # EVENT_DHCP_SCOPE = "event_dhcp_scope"
 
     # getFilteredRequestInitiator
     # добавьте другие события при необходимости

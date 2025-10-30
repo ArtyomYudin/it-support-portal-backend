@@ -1,6 +1,6 @@
 import json
 
-from api.ws.schemas import Event
+from rabbitmq.schemas import Event
 from db.database import AsyncSessionLocal
 from services.pacs_service import get_pacs_events_by_id, get_pacs_last_event
 from api.ws.manager import manager
@@ -54,6 +54,14 @@ async def celery_beat_handler(message):
             await manager.broadcast(json.dumps(
                 {
                     "event": "event_avaya_e1_channel_info",
+                    "data": message_body["data"]
+                })
+            )
+
+        case Event.EVENT_DHCP_SCOPE:
+            await manager.broadcast(json.dumps(
+                {
+                    "event": "event_dhcp_scope",
                     "data": message_body["data"]
                 })
             )
