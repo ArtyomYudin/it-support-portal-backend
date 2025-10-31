@@ -7,7 +7,7 @@ if [ -z "$KERBEROS_PASSWORD" ]; then
     exit 1
 fi
 
-echo "$KERBEROS_PASSWORD" | kinit itsupport@CENTER-INFORM.RU
+echo "$KERBEROS_PASSWORD" | kinit "$KERBEROS_USER"
 
 # Запускаем команду переданную в CMD
 exec "$@"
