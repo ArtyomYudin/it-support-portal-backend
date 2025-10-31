@@ -70,6 +70,7 @@ PS_SCOPE_STATS = r"""
                 AddressesFree   = $stat.AddressesFree
                 AddressesInUse  = $stat.AddressesInUse
                 PendingOffers   = $stat.PendingOffers
+                ReservedAddress = $stat.ReservedAddress
                 TotalAddresses  = $total
                 PercentageInUse = $pct
             }}
@@ -108,7 +109,7 @@ async def _publish_event(processed_servers, event, collected_at):
     if processed_servers:
         payload = {
             "event": event,
-            "collected_at": collected_at,
+            "collected_at": collected_at.isoformat(),
             "servers": processed_servers,
         }
         try:
@@ -233,6 +234,7 @@ async def get_dhcp_scope_lease():
                     continue
 
                 await add_dhcp_scope_lease(db, data, server, collected_at)
+                processed_servers.append(server)  # ← только при успехе!
                 logger.info(f"[{server}] {len(data)} leases processed")
 
             except Exception as e:
@@ -270,5 +272,5 @@ def fetch_dhcp_scope_lease_task(self, token: Optional[str] = None):
 
 if __name__ == "__main__":
     # asyncio.run(get_dhcp_scope())
-    # asyncio.run(get_dhcp_scope_statistic())
-    asyncio.run(get_dhcp_scope_lease())
+     asyncio.run(get_dhcp_scope_statistics())
+    # asyncio.run(get_dhcp_scope_lease())

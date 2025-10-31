@@ -12,6 +12,7 @@ from redis.asyncio import Redis
 from api.ws.schemas import ClientMessage, Event
 from api.ws.manager import manager
 from core.settings import settings
+from services.dhcp_service import get_dhcp_scope_statistics
 from services.vpn_service import get_active_vpn_users_by_host
 from utils.security import decode_token
 from db.database import AsyncSessionLocal
@@ -61,6 +62,12 @@ async def websocket_auth_handler(websocket: WebSocket):
 
                                 hardware_group_info = await redis.get("latest:event_hardware_group_alarm")
                                 await manager.send_personal_message(hardware_group_info, websocket)
+
+                            dhcp_scopes_statistics = await get_dhcp_scope_statistics(db)
+                            await manager.send_personal_message(json.dumps({
+                                "event": "event_dhcp_statistics",
+                                "data": {"results": dhcp_scopes_statistics, "total": len(dhcp_scopes_statistics)}
+                            }), websocket)
 
                         case Event.GET_PACS_INIT_VALUE:
                             res = await pacs_service.get_pacs_events_data(db)

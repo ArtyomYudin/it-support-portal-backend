@@ -62,6 +62,7 @@ async def add_dhcp_scope_statistics(db, stats: list[dict], server: str, collecte
             in_use=item.get("AddressesInUse", 0),
             available=item.get("AddressesFree", 0),
             pending_offers=item.get("PendingOffers", 0),
+            reserved=item.get("ReservedAddress", 0),
             percentage_in_use=item.get("PercentageInUse", 0.0),
         )
 
@@ -112,7 +113,7 @@ async def add_dhcp_scope_lease(db: AsyncSession, leases: list[dict], server: str
 
     await db.commit()
 
-async def get_dhcp_scope_statistic(db: AsyncSession):
+async def get_dhcp_scope_statistics(db: AsyncSession):
     # Найти последнюю collected_at
     subq = select(func.max(DhcpScopeStatistics.collected_at)).scalar_subquery()
 
@@ -120,7 +121,10 @@ async def get_dhcp_scope_statistic(db: AsyncSession):
     stmt = (
         select(DhcpScopeStatistics, DhcpScope.scope_id)
         .join(DhcpScope, DhcpScope.id == DhcpScopeStatistics.dhcp_scope_id)
-        .where(DhcpScopeStatistics.collected_at == subq)
+        .where(
+            DhcpScopeStatistics.collected_at == subq,
+            DhcpScope.state == "Active"  # фильтр по активным
+        )
     )
 
     result = await db.execute(stmt)
@@ -135,6 +139,7 @@ async def get_dhcp_scope_statistic(db: AsyncSession):
             "inUse": stat.in_use,
             "available": stat.available,
             "pendingOffers": stat.pending_offers,
+            "reservedAddress": stat.reserved,
             "percentageInUse": float(stat.percentage_in_use),
             # Можно добавить и другие поля из DhcpScope, например name, server_address и т.д.
         }
@@ -167,7 +172,7 @@ async def get_dhcp_scope_lease(db: AsyncSession):
 
 async def test_rule():
     async with AsyncSessionLocal() as db:
-        data = await get_dhcp_scope_statistic(db)
+        data = await get_dhcp_scope_statistics(db)
         logger.info("!!!!!!!!!!!!!!!!!!!!")
         logger.info(data)
         logger.info("!!!!!!!!!!!!!!!!!!!!")
