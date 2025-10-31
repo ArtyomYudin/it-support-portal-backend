@@ -67,6 +67,7 @@ class DhcpScopeStatistics(Base):
     in_use: Mapped[int] = mapped_column(Integer)
     available: Mapped[int] = mapped_column(Integer)
     pending_offers: Mapped[int] = mapped_column(Integer)
+    reserved: Mapped[int] = mapped_column(Integer)
     percentage_in_use: Mapped[Decimal] = mapped_column(Numeric(5, 2))
 
     # Отношение
